@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@14 . --typescript --app --no-tailwind --no-src-dir --yes)",
+      "Bash(npx create-next-app@14 . --typescript --app --no-tailwind --no-src-dir --yes --force)",
+      "Read(//c/Proyectos/**)",
+      "Bash(npx create-next-app@14 iasmtech-temp --typescript --app --no-tailwind --no-src-dir --yes)",
+      "Bash(npx create-next-app@14 iasmtech-temp --typescript --app --no-tailwind --no-src-dir --no-eslint --no-import-alias)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const g = require\\(''''@mui/material/Grid''''\\); console.log\\(Object.keys\\(g\\)\\)\")",
+      "Bash(node -e \"const g = require\\(''@mui/material/Grid''\\); const G = g.default; const r = G.render || G; console.log\\(typeof G\\); \")",
+      "Bash(npm run:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i 's/<Grid item xs={12} sm={6} md={4}/<Grid size={{ xs: 12, sm: 6, md: 4 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12} sm={6} md={6}/<Grid size={{ xs: 12, sm: 6, md: 6 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12} sm={6}/<Grid size={{ xs: 12, sm: 6 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12} md={4}/<Grid size={{ xs: 12, md: 4 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12} md={6}/<Grid size={{ xs: 12, md: 6 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12} md={8}/<Grid size={{ xs: 12, md: 8 }}/g' \"$f\")",
+      "Bash(sed -i 's/<Grid item xs={12}/<Grid size={{ xs: 12 }}/g' \"$f\")",
+      "Bash(done)",
+      "Bash(grep -rn PrismaClientOptions c:/Proyectos/iasmtech/node_modules/@prisma/client/ --include=*.d.ts)",
+      "Bash(ADMIN_EMAIL=ivan.solis20.m@gmail.com ADMIN_PASSWORD=Admin1234! npx prisma db seed)",
+      "Bash(npm uninstall:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Proyectos\\iasmtech\\.claude",
+      "c:\\Proyectos\\iasmtech\\app\\api\\admin\\projects",
+      "c:\\Proyectos\\iasmtech\\app\\api\\admin\\blog",
+      "c:\\Proyectos\\iasmtech\\app\\(public)\\blog"
+    ]
+  }
+}
