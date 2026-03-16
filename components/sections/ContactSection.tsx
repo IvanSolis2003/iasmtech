@@ -17,17 +17,16 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import EmailIcon from '@mui/icons-material/Email'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import SendIcon from '@mui/icons-material/Send'
-import { type ContactFormData, type ServiceType } from '@/types'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
-const serviceOptions: { value: ServiceType; label: string }[] = [
-  { value: 'SITIO_WEB', label: 'Sitio Web' },
-  { value: 'ECOMMERCE', label: 'Tienda Online' },
-  { value: 'APP_MOVIL', label: 'App Móvil' },
-  { value: 'SISTEMA_MEDIDA', label: 'Sistema a Medida' },
-  { value: 'AUTOMATIZACION', label: 'Automatización' },
-  { value: 'OTRO', label: 'Otro' },
+const serviceOptions = [
+  { value: 'Sitio Web', label: 'Sitio Web' },
+  { value: 'Tienda Online', label: 'Tienda Online' },
+  { value: 'App Móvil', label: 'App Móvil' },
+  { value: 'Sistema a Medida', label: 'Sistema a Medida' },
+  { value: 'Automatización', label: 'Automatización' },
+  { value: 'Otro', label: 'Otro' },
 ]
 
 const contactInfo = [
@@ -54,46 +53,31 @@ const contactInfo = [
   },
 ]
 
-const initialForm: ContactFormData = {
-  name: '',
-  email: '',
-  phone: '',
-  serviceType: 'SITIO_WEB',
-  message: '',
-}
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ''
+
+const initialForm = { name: '', email: '', phone: '', service: 'Sitio Web', message: '' }
 
 export default function ContactSection() {
-  const [form, setForm] = useState<ContactFormData>(initialForm)
+  const [form, setForm] = useState(initialForm)
   const [status, setStatus] = useState<FormStatus>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
-
-  const handleChange = (field: keyof ContactFormData, value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }))
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
-    setErrorMsg('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(form),
       })
 
-      const data = await res.json()
-
-      if (!res.ok || !data.success) {
-        throw new Error(data.error ?? 'Error al enviar el mensaje')
-      }
+      if (!res.ok) throw new Error()
 
       setStatus('success')
       setForm(initialForm)
-    } catch (err) {
+    } catch {
       setStatus('error')
-      setErrorMsg(err instanceof Error ? err.message : 'Error inesperado')
     }
   }
 
@@ -161,9 +145,7 @@ export default function ContactSection() {
                         {info.value}
                       </Typography>
                     ) : (
-                      <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                        {info.value}
-                      </Typography>
+                      <Typography variant="body2" sx={{ fontWeight: 600 }}>{info.value}</Typography>
                     )}
                   </Box>
                 </Box>
@@ -189,81 +171,48 @@ export default function ContactSection() {
               )}
               {status === 'error' && (
                 <Alert severity="error" sx={{ mb: 3 }}>
-                  {errorMsg}
+                  Error al enviar el mensaje. Inténtalo de nuevo.
                 </Alert>
               )}
 
               <Grid container spacing={2}>
                 <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField
-                    fullWidth
-                    label="Nombre"
-                    required
-                    value={form.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    disabled={status === 'loading'}
-                  />
+                  <TextField fullWidth label="Nombre" required value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    disabled={status === 'loading'} />
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField
-                    fullWidth
-                    label="Email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    disabled={status === 'loading'}
-                  />
+                  <TextField fullWidth label="Email" type="email" required value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    disabled={status === 'loading'} />
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField
-                    fullWidth
-                    label="Teléfono (opcional)"
-                    value={form.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    disabled={status === 'loading'}
-                  />
+                  <TextField fullWidth label="Teléfono (opcional)" value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    disabled={status === 'loading'} />
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <FormControl fullWidth required>
                     <InputLabel>Tipo de servicio</InputLabel>
-                    <Select
-                      value={form.serviceType}
-                      label="Tipo de servicio"
-                      onChange={(e) => handleChange('serviceType', e.target.value)}
-                      disabled={status === 'loading'}
-                    >
+                    <Select value={form.service} label="Tipo de servicio"
+                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      disabled={status === 'loading'}>
                       {serviceOptions.map((opt) => (
-                        <MenuItem key={opt.value} value={opt.value}>
-                          {opt.label}
-                        </MenuItem>
+                        <MenuItem key={opt.value} value={opt.value}>{opt.label}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <TextField
-                    fullWidth
-                    label="Mensaje"
-                    multiline
-                    rows={4}
-                    required
-                    value={form.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    disabled={status === 'loading'}
-                    inputProps={{ minLength: 10 }}
-                  />
+                  <TextField fullWidth label="Mensaje" multiline rows={4} required
+                    value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    disabled={status === 'loading'} inputProps={{ minLength: 10 }} />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    fullWidth
+                  <Button type="submit" variant="contained" size="large" fullWidth
                     disabled={status === 'loading'}
                     endIcon={status === 'loading' ? <CircularProgress size={18} color="inherit" /> : <SendIcon />}
-                    sx={{ py: 1.5, boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}
-                  >
+                    sx={{ py: 1.5, boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}>
                     {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
                   </Button>
                 </Grid>
