@@ -87,7 +87,7 @@ export default function HeroSection() {
               lineHeight: 1.1,
             }}
           >
-            Soluciones Digitales para el Maule
+            Tu negocio merece tecnología de verdad
           </Typography>
 
           <Typography
@@ -100,7 +100,7 @@ export default function HeroSection() {
               lineHeight: 1.6,
             }}
           >
-            Desarrollo web, apps móviles y automatización para PYMES y emprendedores
+            Desarrollo web, apps y automatización a medida
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>

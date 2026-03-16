@@ -35,6 +35,7 @@ async function main() {
         category: 'ECOMMERCE',
         featured: true,
         order: 1,
+        projectUrl: 'https://e-commerce-multivendor-bcrk.vercel.app/',
       },
       {
         title: 'Sistema de Gestión de Activos',
@@ -44,6 +45,7 @@ async function main() {
         category: 'SISTEMA',
         featured: true,
         order: 2,
+        projectUrl: 'https://sistema-de-prestamos-w51n.onrender.com/',
       },
       {
         title: 'Mermax — Control de Vencimientos',

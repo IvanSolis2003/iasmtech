@@ -17,7 +17,7 @@ const techStack = [
 ]
 
 const highlights = [
-  { icon: <WorkIcon fontSize="small" />, text: '+3 años de experiencia en desarrollo' },
+  { icon: <WorkIcon fontSize="small" />, text: '+2 años de experiencia en desarrollo' },
   { icon: <SchoolIcon fontSize="small" />, text: 'Ex-líder de equipos — Apple Premium Reseller' },
   { icon: <LocationOnIcon fontSize="small" />, text: 'Talca, Región del Maule, Chile' },
 ]
@@ -128,7 +128,7 @@ export default function AboutSection() {
               <Button
                 variant="contained"
                 startIcon={<DownloadIcon />}
-                href="/assets/cv-ivan-solis.pdf"
+                href="/CV_ivan_solis.pdf"
                 download
               >
                 Descargar CV
@@ -136,7 +136,7 @@ export default function AboutSection() {
               <Button
                 variant="outlined"
                 startIcon={<LinkedInIcon />}
-                href="https://linkedin.com/in/ivansolismanqueo"
+                href="https://www.linkedin.com/in/iván-solís-manqueo-57a00b2b8"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ borderColor: 'rgba(41, 121, 255, 0.5)' }}

@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import Button from '@mui/material/Button'
 import LanguageIcon from '@mui/icons-material/Language'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
@@ -16,42 +17,36 @@ const services = [
     icon: <LanguageIcon sx={{ fontSize: 48 }} />,
     title: 'Sitios Web Modernos',
     description: 'Landing pages y sitios institucionales rápidos, responsivos y optimizados para SEO.',
-    price: 'desde $150.000 CLP',
     color: '#2979FF',
   },
   {
     icon: <StorefrontIcon sx={{ fontSize: 48 }} />,
     title: 'Tiendas Online',
     description: 'E-commerce completo con carrito, pagos, inventario y panel de administración.',
-    price: 'desde $350.000 CLP',
     color: '#00E5FF',
   },
   {
     icon: <PhoneAndroidIcon sx={{ fontSize: 48 }} />,
     title: 'Apps Móviles Android',
     description: 'Aplicaciones React Native para Android, conectadas a tu backend existente.',
-    price: 'desde $400.000 CLP',
     color: '#69F0AE',
   },
   {
     icon: <SettingsIcon sx={{ fontSize: 48 }} />,
     title: 'Sistemas a Medida',
     description: 'Software de gestión personalizado: inventarios, activos, ventas, RRHH.',
-    price: 'desde $500.000 CLP',
     color: '#FFD740',
   },
   {
     icon: <SmartToyIcon sx={{ fontSize: 48 }} />,
     title: 'Automatización con n8n',
     description: 'Flujos automatizados entre tus apps: CRM, email, WhatsApp, facturación.',
-    price: 'desde $100.000 CLP',
     color: '#FF6E40',
   },
   {
     icon: <BuildIcon sx={{ fontSize: 48 }} />,
     title: 'Mantención y Soporte',
     description: 'Mantención mensual, actualizaciones, backups y soporte técnico continuo.',
-    price: 'desde $50.000 CLP/mes',
     color: '#EA80FC',
   },
 ]
@@ -107,16 +102,28 @@ export default function ServicesSection() {
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.7 }}>
                     {service.description}
                   </Typography>
-                  <Typography
-                    variant="body2"
+                  <Button
+                    component="a"
+                    href="#contacto"
+                    size="small"
                     sx={{
-                      fontWeight: 700,
                       color: service.color,
-                      fontSize: '0.85rem',
+                      borderColor: `${service.color}60`,
+                      border: '1px solid',
+                      px: 2,
+                      py: 0.5,
+                      fontSize: '0.78rem',
+                      fontWeight: 600,
+                      borderRadius: 1,
+                      textTransform: 'none',
+                      '&:hover': {
+                        backgroundColor: `${service.color}12`,
+                        borderColor: service.color,
+                      },
                     }}
                   >
-                    {service.price}
-                  </Typography>
+                    Cotizar →
+                  </Button>
                 </CardContent>
               </Card>
             </Grid>

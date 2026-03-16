@@ -5,13 +5,11 @@ import IconButton from '@mui/material/IconButton'
 import Divider from '@mui/material/Divider'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import CodeIcon from '@mui/icons-material/Code'
 
 const socialLinks = [
-  { icon: <GitHubIcon />, href: 'https://github.com/ivansolisdev', label: 'GitHub' },
-  { icon: <LinkedInIcon />, href: 'https://linkedin.com/in/ivansolismanqueo', label: 'LinkedIn' },
-  { icon: <WhatsAppIcon />, href: 'https://wa.me/56912345678', label: 'WhatsApp' },
+  { icon: <GitHubIcon />, href: 'https://github.com/IvanSolis2003', label: 'GitHub' },
+  { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/iván-solís-manqueo-57a00b2b8', label: 'LinkedIn' },
 ]
 
 const footerLinks = [
@@ -95,7 +93,7 @@ export default function Footer() {
         <Divider sx={{ borderColor: 'rgba(41, 121, 255, 0.1)', mb: 3 }} />
 
         <Typography variant="body2" color="text.secondary" align="center">
-          © {new Date().getFullYear()} Iván Solís Manqueo — Talca, Chile
+          © {new Date().getFullYear()} Iván Solís — Talca, Chile
         </Typography>
       </Container>
     </Box>
