@@ -86,7 +86,7 @@ export default function AboutSection() {
               Sobre mí
             </Typography>
             <Typography variant="h2" sx={{ mt: 1, mb: 3 }}>
-              Iván Solís Manqueo
+              Iván Solís
             </Typography>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 3 }}>
