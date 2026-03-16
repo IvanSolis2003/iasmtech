@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
 import Grid from '@mui/material/Grid'
-import DownloadIcon from '@mui/icons-material/Download'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import WorkIcon from '@mui/icons-material/Work'
 import SchoolIcon from '@mui/icons-material/School'
@@ -125,14 +124,6 @@ export default function AboutSection() {
             </Box>
 
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-              <Button
-                variant="contained"
-                startIcon={<DownloadIcon />}
-                href="/CV_ivan_solis.pdf"
-                download
-              >
-                Descargar CV
-              </Button>
               <Button
                 variant="outlined"
                 startIcon={<LinkedInIcon />}
