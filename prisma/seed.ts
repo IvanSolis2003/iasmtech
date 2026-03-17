@@ -35,7 +35,7 @@ async function main() {
         category: 'ECOMMERCE',
         featured: true,
         order: 1,
-        projectUrl: 'https://e-commerce-multivendor-bcrk.vercel.app/',
+        projectUrl: 'https://ecommerce.iasmtech.com/',
       },
       {
         title: 'Sistema de Gestión de Activos',
@@ -64,6 +64,7 @@ async function main() {
         category: 'WEB',
         featured: false,
         order: 4,
+        projectUrl: 'https://familytaskiasm20tech.vercel.app',
       },
     ],
   })
