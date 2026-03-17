@@ -14,7 +14,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta un sitio web o sistema?',
     answer:
-      'Depende del alcance del proyecto. Un sitio informativo parte desde $200.000 CLP, una tienda online desde $500.000 CLP, y un sistema a medida se cotiza según los módulos que necesitas. Lo importante es que siempre recibirás una propuesta detallada antes de comprometerte con algo.',
+      'Depende del alcance del proyecto. Cada caso es distinto, por eso la cotización es siempre personalizada y sin costo. Lo importante es que siempre recibirás una propuesta detallada antes de comprometerte con algo.',
   },
   {
     question: '¿Cuánto tiempo demora el desarrollo?',
