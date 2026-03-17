@@ -48,7 +48,7 @@ export default function Footer() {
               </Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280 }}>
-              Soluciones digitales para PYMES y emprendedores de la Región del Maule.
+              Soluciones digitales para PYMES y emprendedores en todo Chile.
             </Typography>
           </Box>
 

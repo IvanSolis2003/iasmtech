@@ -73,7 +73,7 @@ export default function ServicesSection() {
             ¿Qué puedo hacer por tu negocio?
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 540, mx: 'auto' }}>
-            Soluciones tecnológicas adaptadas a la realidad de las PYMES y emprendedores del Maule.
+            Soluciones tecnológicas adaptadas a la realidad de las PYMES y emprendedores.
           </Typography>
         </Box>
 

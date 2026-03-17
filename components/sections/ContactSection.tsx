@@ -47,7 +47,7 @@ const contactInfo = [
   {
     icon: <LocationOnIcon />,
     label: 'Ubicación',
-    value: 'Talca, Región del Maule, Chile',
+    value: 'Talca, Chile',
     href: null,
     color: '#00E5FF',
   },

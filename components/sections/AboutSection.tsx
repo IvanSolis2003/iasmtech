@@ -18,7 +18,7 @@ const techStack = [
 const highlights = [
   { icon: <WorkIcon fontSize="small" />, text: '+2 años de experiencia en desarrollo' },
   { icon: <SchoolIcon fontSize="small" />, text: 'Ex-líder de equipos — Apple Premium Reseller' },
-  { icon: <LocationOnIcon fontSize="small" />, text: 'Talca, Región del Maule, Chile' },
+  { icon: <LocationOnIcon fontSize="small" />, text: 'Talca, Chile' },
 ]
 
 export default function AboutSection() {
@@ -101,7 +101,7 @@ export default function AboutSection() {
               Comencé mi carrera liderando equipos en Apple Premium Reseller, donde aprendí que la tecnología
               solo tiene valor cuando resuelve problemas reales. Esa convicción me llevó a reconvertirme como
               desarrollador Full Stack, especializándome en soluciones digitales para PYMES y emprendedores
-              de la Región del Maule.
+              en todo Chile.
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.8 }}>
               Hoy desarrollo desde Talca, combinando visión de negocio con código limpio y escalable.

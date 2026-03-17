@@ -10,14 +10,14 @@ const BASE_URL = 'https://iasmtech.cl'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'iasmtech — Soluciones Digitales para el Maule',
+    default: 'iasmtech — Soluciones Digitales para tu Negocio',
     template: '%s — iasmtech',
   },
   description:
-    'Desarrollo web, apps móviles y automatización para PYMES y emprendedores en Talca y la Región del Maule. Full Stack Developer — Iván Solís Manqueo.',
+    'Desarrollo web, apps móviles y automatización para PYMES y emprendedores. Full Stack Developer — Iván Solís.',
   keywords: [
     'desarrollo web Talca',
-    'apps móviles Maule',
+    'apps móviles Chile',
     'programador freelance Chile',
     'Next.js',
     'React',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Iván Solís Manqueo', url: BASE_URL }],
   creator: 'Iván Solís Manqueo',
   openGraph: {
-    title: 'iasmtech — Soluciones Digitales para el Maule',
+    title: 'iasmtech — Soluciones Digitales para tu Negocio',
     description:
-      'Desarrollo web, apps móviles y automatización para PYMES y emprendedores de la Región del Maule.',
+      'Desarrollo web, apps móviles y automatización para PYMES y emprendedores.',
     url: BASE_URL,
     siteName: 'iasmtech',
     locale: 'es_CL',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iasmtech — Soluciones Digitales para el Maule',
-    description: 'Desarrollo web, apps móviles y automatización para PYMES del Maule.',
+    title: 'iasmtech — Soluciones Digitales para tu Negocio',
+    description: 'Desarrollo web, apps móviles y automatización para PYMES y emprendedores.',
     creator: '@ivansolisdev',
   },
   robots: {
