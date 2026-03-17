@@ -40,8 +40,15 @@ const contactInfo = [
   {
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'iasm20.tech@gmail.com',
-    href: 'mailto:iasm20.tech@gmail.com',
+    value: 'contacto@iasmtech.com',
+    href: 'mailto:contacto@iasmtech.com',
+    color: '#2979FF',
+  },
+  {
+    icon: <EmailIcon />,
+    label: 'Email personal',
+    value: 'ivanss@iasmtech.com',
+    href: 'mailto:ivanss@iasmtech.com',
     color: '#2979FF',
   },
   {
