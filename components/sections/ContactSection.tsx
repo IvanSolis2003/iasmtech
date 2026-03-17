@@ -33,15 +33,15 @@ const contactInfo = [
   {
     icon: <WhatsAppIcon />,
     label: 'WhatsApp',
-    value: '+56 9 1234 5678',
-    href: 'https://wa.me/56912345678',
+    value: '+56 9 9045 7931',
+    href: 'https://wa.me/56990457931',
     color: '#4caf50',
   },
   {
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'contacto@iasmtech.cl',
-    href: 'mailto:contacto@iasmtech.cl',
+    value: 'iasm20.tech@gmail.com',
+    href: 'mailto:iasm20.tech@gmail.com',
     color: '#2979FF',
   },
   {
