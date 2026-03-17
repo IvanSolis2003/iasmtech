@@ -74,7 +74,7 @@ export default function Navbar() {
               href="#contacto"
               sx={{ ml: 1, boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}
             >
-              Trabajemos juntos
+              Cotizar proyecto
             </Button>
           </Box>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
               href="#contacto"
               onClick={() => setMobileOpen(false)}
             >
-              Trabajemos juntos
+              Cotizar proyecto
             </Button>
           </ListItem>
         </List>
