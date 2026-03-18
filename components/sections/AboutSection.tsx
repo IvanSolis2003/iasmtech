@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
 import Grid from '@mui/material/Grid'
+import Image from 'next/image'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import WorkIcon from '@mui/icons-material/Work'
 import SchoolIcon from '@mui/icons-material/School'
@@ -46,16 +47,19 @@ export default function AboutSection() {
                   width: { xs: 260, md: 340 },
                   height: { xs: 260, md: 340 },
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, rgba(41, 121, 255, 0.2) 0%, rgba(0, 229, 255, 0.1) 100%)',
-                  border: '2px solid rgba(41, 121, 255, 0.3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: { xs: '80px', md: '120px' },
-                  boxShadow: '0 0 60px rgba(41, 121, 255, 0.15)',
+                  border: '3px solid rgba(41, 121, 255, 0.4)',
+                  boxShadow: '0 0 60px rgba(41, 121, 255, 0.2)',
+                  overflow: 'hidden',
+                  position: 'relative',
                 }}
               >
-                👨‍💻
+                <Image
+                  src="/assets/perfil.jpg"
+                  alt="Iván Solís — Full Stack Developer"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  priority
+                />
               </Box>
               <Box
                 sx={{
