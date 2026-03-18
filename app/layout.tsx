@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { Analytics } from '@vercel/analytics/next'
 import theme from '@/lib/theme'
 import './globals.css'
 
@@ -63,6 +64,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             {children}
+            <Analytics />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

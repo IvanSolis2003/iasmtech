@@ -2,11 +2,13 @@ import { prisma } from '@/lib/prisma'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/sections/HeroSection'
+import StatsSection from '@/components/sections/StatsSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import HowIWorkSection from '@/components/sections/HowIWorkSection'
 import PortfolioSection from '@/components/sections/PortfolioSection'
 import AboutSection from '@/components/sections/AboutSection'
 import FaqSection from '@/components/sections/FaqSection'
+import CtaSection from '@/components/sections/CtaSection'
 import BlogSection from '@/components/sections/BlogSection'
 import ContactSection from '@/components/sections/ContactSection'
 import WhatsAppFab from '@/components/ui/WhatsAppFab'
@@ -39,11 +41,13 @@ export default async function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <StatsSection />
         <ServicesSection />
         <HowIWorkSection />
         <PortfolioSection projects={projects} />
         <AboutSection />
         <FaqSection />
+        <CtaSection />
         <BlogSection posts={posts} />
         <ContactSection />
       </main>
