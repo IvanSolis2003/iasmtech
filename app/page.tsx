@@ -2,7 +2,6 @@ import { prisma } from '@/lib/prisma'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/sections/HeroSection'
-import StatsSection from '@/components/sections/StatsSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import HowIWorkSection from '@/components/sections/HowIWorkSection'
 import PortfolioSection from '@/components/sections/PortfolioSection'
@@ -41,7 +40,6 @@ export default async function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsSection />
         <ServicesSection />
         <HowIWorkSection />
         <PortfolioSection projects={projects} />
