@@ -16,6 +16,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import CodeIcon from '@mui/icons-material/Code'
+import ThemeToggle from '@/components/ui/ThemeToggle'
 
 const navItems = [
   { label: 'Servicios', href: '#servicios' },
@@ -56,7 +57,7 @@ export default function Navbar() {
             </Typography>
           </Box>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, alignItems: 'center' }}>
             {navItems.map((item) => (
               <Button
                 key={item.label}
@@ -69,6 +70,7 @@ export default function Navbar() {
                 {item.label}
               </Button>
             ))}
+            <ThemeToggle />
             <Button
               variant="contained"
               href="#contacto"
@@ -76,6 +78,10 @@ export default function Navbar() {
             >
               Cotizar proyecto
             </Button>
+          </Box>
+
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 0.5 }}>
+            <ThemeToggle />
           </Box>
 
           <IconButton

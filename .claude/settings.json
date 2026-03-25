@@ -24,7 +24,8 @@
       "Bash(done)",
       "Bash(grep -rn PrismaClientOptions c:/Proyectos/iasmtech/node_modules/@prisma/client/ --include=*.d.ts)",
       "Bash(ADMIN_EMAIL=ivan.solis20.m@gmail.com ADMIN_PASSWORD=Admin1234! npx prisma db seed)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:dev.iasmtech.com)"
     ],
     "additionalDirectories": [
       "c:\\Proyectos\\iasmtech\\.claude",

@@ -273,12 +273,49 @@ export default function HeroSection() {
             </Button>
           </Box>
 
-          {/* Logos tecnologías */}
-          <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap', opacity: 0.4 }}>
-            {['Next.js', 'React', 'Node.js', 'TypeScript', 'PostgreSQL', 'React Native'].map((tech) => (
-              <Typography key={tech} variant="caption" sx={{ fontWeight: 600, letterSpacing: 1, fontSize: '0.7rem', textTransform: 'uppercase' }}>
-                {tech}
-              </Typography>
+          <Box sx={{ display: 'flex', gap: 1.5, justifyContent: 'center', flexWrap: 'wrap' }}>
+            {[
+              { slug: 'nextdotjs', color: 'FFFFFF', name: 'Next.js' },
+              { slug: 'react', color: '61DAFB', name: 'React' },
+              { slug: 'typescript', color: '3178C6', name: 'TypeScript' },
+              { slug: 'nodedotjs', color: '339933', name: 'Node.js' },
+              { slug: 'postgresql', color: '4169E1', name: 'PostgreSQL' },
+              { slug: 'react', color: '61DAFB', name: 'React Native' },
+            ].map((tech) => (
+              <Box
+                key={tech.name}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  backgroundColor: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '8px',
+                  px: '14px',
+                  py: '8px',
+                }}
+              >
+                <Box
+                  component="img"
+                  src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
+                  alt={tech.name}
+                  width={24}
+                  height={24}
+                  sx={{ display: 'block', flexShrink: 0 }}
+                />
+                <Typography
+                  variant="caption"
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: '0.78rem',
+                    color: 'rgba(240,240,240,0.75)',
+                    letterSpacing: '0.02em',
+                    lineHeight: 1,
+                  }}
+                >
+                  {tech.name}
+                </Typography>
+              </Box>
             ))}
           </Box>
         </Box>

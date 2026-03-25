@@ -11,6 +11,7 @@ import CtaSection from '@/components/sections/CtaSection'
 import BlogSection from '@/components/sections/BlogSection'
 import ContactSection from '@/components/sections/ContactSection'
 import WhatsAppFab from '@/components/ui/WhatsAppFab'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 async function getProjects() {
   try {
@@ -40,14 +41,30 @@ export default async function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <ServicesSection />
-        <HowIWorkSection />
-        <PortfolioSection projects={projects} />
-        <AboutSection />
-        <FaqSection />
-        <CtaSection />
-        <BlogSection posts={posts} />
-        <ContactSection />
+        <ScrollReveal delay={0}>
+          <ServicesSection />
+        </ScrollReveal>
+        <ScrollReveal delay={100}>
+          <HowIWorkSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <PortfolioSection projects={projects} />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <FaqSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <CtaSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <BlogSection posts={posts} />
+        </ScrollReveal>
+        <ScrollReveal delay={0}>
+          <ContactSection />
+        </ScrollReveal>
       </main>
       <Footer />
       <WhatsAppFab />
