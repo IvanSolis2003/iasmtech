@@ -67,41 +67,79 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  backdropFilter: 'blur(10px)',
+                  backgroundColor: '#0E0E1A',
+                  border: '1px solid rgba(41,121,255,0.12)',
                   transition: 'all 0.3s ease',
+                  overflow: 'hidden',
                   '&:hover': {
-                    transform: 'translateY(-6px)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(41,121,255,0.4)',
                     borderColor: 'rgba(41, 121, 255, 0.4)',
+                    '& .project-overlay': { opacity: 1 },
+                    '& .project-img': { transform: 'scale(1.05)' },
                   },
                 }}
               >
-                {project.imageUrl ? (
-                  <Box
-                    component="img"
-                    src={project.imageUrl}
-                    alt={project.title}
-                    sx={{
-                      width: '100%',
-                      height: 200,
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                  />
-                ) : (
-                  <Box
-                    sx={{
-                      height: 200,
-                      background: 'linear-gradient(135deg, rgba(41,121,255,0.1) 0%, rgba(0,229,255,0.05) 100%)',
+                <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+                  {project.imageUrl ? (
+                    <Box
+                      component="img"
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="project-img"
+                      sx={{
+                        width: '100%',
+                        height: 210,
+                        objectFit: 'cover',
+                        display: 'block',
+                        transition: 'transform 0.4s ease',
+                      }}
+                    />
+                  ) : (
+                    <Box sx={{
+                      height: 210,
+                      background: 'linear-gradient(135deg, rgba(41,121,255,0.12) 0%, rgba(0,229,255,0.06) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '48px',
-                    }}
-                  >
-                    🚀
-                  </Box>
-                )}
+                      fontSize: '52px',
+                    }}>
+                      🚀
+                    </Box>
+                  )}
+                  {/* Overlay hover con botón */}
+                  {project.projectUrl && (
+                    <Box
+                      className="project-overlay"
+                      sx={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(135deg, rgba(41,121,255,0.85) 0%, rgba(0,70,203,0.9) 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        opacity: 0,
+                        transition: 'opacity 0.3s ease',
+                      }}
+                    >
+                      <Button
+                        variant="contained"
+                        startIcon={<OpenInNewIcon />}
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          backgroundColor: 'white',
+                          color: '#2979FF',
+                          fontWeight: 700,
+                          '&:hover': { backgroundColor: '#f0f0f0' },
+                        }}
+                      >
+                        Ver proyecto
+                      </Button>
+                    </Box>
+                  )}
+                </Box>
                 <CardContent sx={{ flex: 1, p: 3 }}>
                   <Chip
                     label={project.category}

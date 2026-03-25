@@ -2,10 +2,8 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
+import Button from '@mui/material/Button'
 import LanguageIcon from '@mui/icons-material/Language'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
@@ -15,46 +13,52 @@ import BuildIcon from '@mui/icons-material/Build'
 
 const services = [
   {
-    icon: <LanguageIcon sx={{ fontSize: 48 }} />,
+    icon: <LanguageIcon sx={{ fontSize: 40 }} />,
     title: 'Presencia Online Profesional',
     benefit: 'Que tus clientes te encuentren en Google y confíen en tu negocio desde el primer clic.',
     techs: ['Next.js', 'SEO', 'Vercel'],
     color: '#2979FF',
+    glow: 'rgba(41,121,255,0.35)',
   },
   {
-    icon: <StorefrontIcon sx={{ fontSize: 48 }} />,
+    icon: <StorefrontIcon sx={{ fontSize: 40 }} />,
     title: 'Vende las 24 horas del día',
     benefit: 'Tu tienda online trabajando mientras duermes: pagos, stock y pedidos en piloto automático.',
     techs: ['E-commerce', 'Pasarela de pagos', 'Dashboard'],
     color: '#00E5FF',
+    glow: 'rgba(0,229,255,0.3)',
   },
   {
-    icon: <PhoneAndroidIcon sx={{ fontSize: 48 }} />,
+    icon: <PhoneAndroidIcon sx={{ fontSize: 40 }} />,
     title: 'Tu negocio en el celular',
     benefit: 'Una app con tu nombre que tus clientes descargan, usan y recuerdan todos los días.',
     techs: ['Android', 'React Native', 'Notificaciones'],
     color: '#69F0AE',
+    glow: 'rgba(105,240,174,0.3)',
   },
   {
-    icon: <SettingsIcon sx={{ fontSize: 48 }} />,
+    icon: <SettingsIcon sx={{ fontSize: 40 }} />,
     title: 'Controla tu negocio en un solo lugar',
     benefit: 'Olvídate de las planillas Excel. Un sistema hecho exactamente para como trabajas tú.',
     techs: ['Panel admin', 'Reportes', 'Base de datos'],
     color: '#FFD740',
+    glow: 'rgba(255,215,64,0.3)',
   },
   {
-    icon: <SmartToyIcon sx={{ fontSize: 48 }} />,
+    icon: <SmartToyIcon sx={{ fontSize: 40 }} />,
     title: 'Ahorra tiempo con automatización',
     benefit: 'Tareas repetitivas que hace una máquina: cotizaciones, avisos por WhatsApp, reportes automáticos.',
     techs: ['n8n', 'WhatsApp API', 'Email'],
     color: '#FF6E40',
+    glow: 'rgba(255,110,64,0.3)',
   },
   {
-    icon: <BuildIcon sx={{ fontSize: 48 }} />,
+    icon: <BuildIcon sx={{ fontSize: 40 }} />,
     title: 'Tranquilidad post-lanzamiento',
     benefit: 'Que tu sitio o sistema nunca se caiga. Actualizaciones, respaldos y soporte cuando los necesitas.',
     techs: ['Monitoreo', 'Backups', 'Soporte'],
     color: '#EA80FC',
+    glow: 'rgba(234,128,252,0.3)',
   },
 ]
 
@@ -64,22 +68,42 @@ export default function ServicesSection() {
       component="section"
       id="servicios"
       sx={{
-        py: { xs: 8, md: 12 },
-        background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)',
+        py: { xs: 10, md: 14 },
+        background: 'linear-gradient(180deg, #0A0A0F 0%, #0D0D18 50%, #0A0A0F 100%)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
+      {/* Fondo decorativo */}
+      <Box sx={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 800,
+        height: 800,
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(41,121,255,0.04) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 7, md: 10 } }}>
           <Typography
             variant="overline"
-            sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}
+            sx={{
+              color: 'primary.main',
+              fontWeight: 700,
+              letterSpacing: 4,
+              fontSize: '0.75rem',
+            }}
           >
             Servicios
           </Typography>
-          <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
+          <Typography variant="h2" sx={{ mt: 1, mb: 2, fontWeight: 800 }}>
             ¿Qué puedo hacer por tu negocio?
           </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 540, mx: 'auto' }}>
+          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: 'auto', fontSize: '1.05rem' }}>
             Sin tecnicismos. Resultados concretos para que tu negocio crezca.
           </Typography>
         </Box>
@@ -87,28 +111,84 @@ export default function ServicesSection() {
         <Grid container spacing={3}>
           {services.map((service) => (
             <Grid key={service.title} size={{ xs: 12, sm: 6, md: 4 }}>
-              <Card
+              <Box
                 sx={{
+                  position: 'relative',
+                  borderRadius: '16px',
+                  padding: '1px',
+                  background: `linear-gradient(135deg, ${service.color}40 0%, transparent 50%, ${service.color}20 100%)`,
                   height: '100%',
-                  backgroundColor: 'background.paper',
-                  backdropFilter: 'blur(10px)',
                   transition: 'all 0.3s ease',
-                  cursor: 'default',
-                  display: 'flex',
-                  flexDirection: 'column',
                   '&:hover': {
+                    background: `linear-gradient(135deg, ${service.color}80 0%, ${service.color}20 50%, ${service.color}60 100%)`,
                     transform: 'translateY(-6px)',
-                    boxShadow: `0 20px 40px rgba(0,0,0,0.3)`,
-                    borderColor: `${service.color}40`,
+                    '& .card-glow': {
+                      opacity: 1,
+                    },
+                    '& .service-icon': {
+                      transform: 'scale(1.1)',
+                      filter: `drop-shadow(0 0 12px ${service.color})`,
+                    },
                   },
                 }}
               >
-                <CardContent sx={{ p: 4, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <Box sx={{ color: service.color, mb: 2 }}>{service.icon}</Box>
-                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
+                {/* Glow exterior en hover */}
+                <Box
+                  className="card-glow"
+                  sx={{
+                    position: 'absolute',
+                    inset: -1,
+                    borderRadius: '16px',
+                    boxShadow: `0 0 30px ${service.glow}`,
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                    pointerEvents: 'none',
+                  }}
+                />
+
+                {/* Interior de la card */}
+                <Box
+                  sx={{
+                    backgroundColor: '#0E0E1A',
+                    borderRadius: '15px',
+                    p: { xs: 3, md: 4 },
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  {/* Ícono con fondo */}
+                  <Box
+                    sx={{
+                      width: 64,
+                      height: 64,
+                      borderRadius: '14px',
+                      backgroundColor: `${service.color}15`,
+                      border: `1px solid ${service.color}30`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: service.color,
+                      mb: 3,
+                    }}
+                  >
+                    <Box
+                      className="service-icon"
+                      sx={{ transition: 'all 0.3s ease', display: 'flex' }}
+                    >
+                      {service.icon}
+                    </Box>
+                  </Box>
+
+                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5, lineHeight: 1.3 }}>
                     {service.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.7, flexGrow: 1 }}>
+
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 3, lineHeight: 1.8, flexGrow: 1 }}
+                  >
                     {service.benefit}
                   </Typography>
 
@@ -119,11 +199,12 @@ export default function ServicesSection() {
                         label={tech}
                         size="small"
                         sx={{
-                          fontSize: '0.7rem',
+                          fontSize: '0.68rem',
                           height: 22,
-                          backgroundColor: `${service.color}14`,
+                          backgroundColor: `${service.color}12`,
                           color: service.color,
-                          border: `1px solid ${service.color}30`,
+                          border: `1px solid ${service.color}25`,
+                          fontWeight: 500,
                         }}
                       />
                     ))}
@@ -134,26 +215,27 @@ export default function ServicesSection() {
                     href="#contacto"
                     size="small"
                     sx={{
-                      color: service.color,
-                      borderColor: `${service.color}60`,
-                      border: '1px solid',
-                      px: 2,
-                      py: 0.5,
-                      fontSize: '0.78rem',
-                      fontWeight: 600,
-                      borderRadius: 1,
-                      textTransform: 'none',
                       alignSelf: 'flex-start',
+                      color: service.color,
+                      border: `1px solid ${service.color}50`,
+                      px: 2.5,
+                      py: 0.6,
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      borderRadius: '8px',
+                      textTransform: 'none',
                       '&:hover': {
-                        backgroundColor: `${service.color}12`,
+                        backgroundColor: `${service.color}15`,
                         borderColor: service.color,
+                        boxShadow: `0 0 12px ${service.color}40`,
                       },
+                      transition: 'all 0.2s ease',
                     }}
                   >
                     Cotizar →
                   </Button>
-                </CardContent>
-              </Card>
+                </Box>
+              </Box>
             </Grid>
           ))}
         </Grid>
