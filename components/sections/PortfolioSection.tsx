@@ -29,7 +29,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
               Trabajos
             </Typography>
             <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
-              Esto es lo que puedo construir para ti
+              Te muestro algunos de mis trabajos
             </Typography>
             <Typography variant="body1" color="text.secondary">
               Los trabajos se cargarán pronto.
@@ -52,7 +52,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
             Trabajos
           </Typography>
           <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
-            Esto es lo que puedo construir para ti
+            Te muestro algunos de mis trabajos
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 540, mx: 'auto' }}>
             Ejemplos reales de lo que desarrollo. Tu proyecto podría ser el siguiente.
@@ -76,11 +76,23 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
                   },
                 }}
               >
-                {project.imageUrl && (
+                {project.imageUrl ? (
+                  <Box
+                    component="img"
+                    src={project.imageUrl}
+                    alt={project.title}
+                    sx={{
+                      width: '100%',
+                      height: 200,
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                ) : (
                   <Box
                     sx={{
-                      height: 180,
-                      background: 'linear-gradient(135deg, rgba(41,121,255,0.15) 0%, rgba(0,229,255,0.05) 100%)',
+                      height: 200,
+                      background: 'linear-gradient(135deg, rgba(41,121,255,0.1) 0%, rgba(0,229,255,0.05) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
