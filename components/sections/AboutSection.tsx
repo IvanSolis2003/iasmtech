@@ -30,7 +30,7 @@ export default function AboutSection() {
       id="sobre-mi"
       sx={{
         py: { xs: 8, md: 12 },
-        background: '#0A0D18',
+        backgroundColor: 'background.default',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -73,7 +73,7 @@ export default function AboutSection() {
                   position: 'absolute',
                   bottom: -16,
                   right: { xs: '10%', md: '5%' },
-                  backgroundColor: 'background.default',
+                  backgroundColor: 'background.paper',
                   border: '1px solid rgba(41, 121, 255, 0.3)',
                   borderRadius: 2,
                   px: 2,

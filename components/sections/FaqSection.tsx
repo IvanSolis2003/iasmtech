@@ -57,7 +57,7 @@ export default function FaqSection() {
       id="faq"
       sx={{
         py: { xs: 8, md: 12 },
-        background: '#0A0A0F',
+        backgroundColor: 'background.paper',
         position: 'relative',
         overflow: 'hidden',
       }}

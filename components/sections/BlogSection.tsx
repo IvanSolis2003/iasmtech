@@ -21,7 +21,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
       id="blog"
       sx={{
         py: { xs: 8, md: 12 },
-        background: '#0A0D18',
+        backgroundColor: 'background.default',
         position: 'relative',
         overflow: 'hidden',
       }}

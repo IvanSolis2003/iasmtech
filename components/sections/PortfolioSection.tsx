@@ -22,7 +22,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
       <Box
         component="section"
         id="proyectos"
-        sx={{ py: { xs: 8, md: 12 }, background: '#0A0A0F', position: 'relative', overflow: 'hidden' }}
+        sx={{ py: { xs: 8, md: 12 }, backgroundColor: 'background.paper', position: 'relative', overflow: 'hidden' }}
       >
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
@@ -45,7 +45,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
     <Box
       component="section"
       id="proyectos"
-      sx={{ py: { xs: 8, md: 12 }, background: '#0A0A0F', position: 'relative', overflow: 'hidden' }}
+      sx={{ py: { xs: 8, md: 12 }, backgroundColor: 'background.paper', position: 'relative', overflow: 'hidden' }}
     >
       <AnimatedBackground orbs={[
         { top: '-15%', right: '-10%', size: 500, color: 'rgba(41,121,255,0.14)', duration: 11 },
@@ -72,7 +72,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  backgroundColor: '#0E0E1A',
+                  backgroundColor: 'background.default',
                   border: '1px solid rgba(41,121,255,0.12)',
                   transition: 'all 0.3s ease',
                   overflow: 'hidden',

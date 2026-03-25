@@ -14,7 +14,7 @@ export default function CtaSection() {
         py: { xs: 10, md: 14 },
         position: 'relative',
         overflow: 'hidden',
-        background: '#0A0A0F',
+        backgroundColor: 'background.paper',
       }}
     >
       <AnimatedBackground orbs={[

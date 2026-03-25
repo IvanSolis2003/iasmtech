@@ -95,7 +95,7 @@ export default function ContactSection() {
       id="contacto"
       sx={{
         py: { xs: 8, md: 12 },
-        background: '#0A0D18',
+        backgroundColor: 'background.default',
         position: 'relative',
         overflow: 'hidden',
       }}

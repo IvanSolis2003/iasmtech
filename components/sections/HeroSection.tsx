@@ -20,12 +20,7 @@ export default function HeroSection() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background: '#0A0A0F',
-        animation: 'bgShift 12s ease-in-out infinite',
-        '@keyframes bgShift': {
-          '0%, 100%': { backgroundColor: '#0A0A0F' },
-          '50%': { backgroundColor: '#0A0D1A' },
-        },
+        backgroundColor: 'background.default',
       }}
     >
       {/* Aurora superior — banda de color que pulsa */}

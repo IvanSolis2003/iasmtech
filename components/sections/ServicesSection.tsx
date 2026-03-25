@@ -70,7 +70,7 @@ export default function ServicesSection() {
       id="servicios"
       sx={{
         py: { xs: 10, md: 14 },
-        background: 'linear-gradient(180deg, #0A0A0F 0%, #0D0D18 50%, #0A0A0F 100%)',
+        backgroundColor: 'background.paper',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -143,7 +143,7 @@ export default function ServicesSection() {
                 {/* Interior de la card */}
                 <Box
                   sx={{
-                    backgroundColor: '#0E0E1A',
+                    backgroundColor: 'background.default',
                     borderRadius: '15px',
                     p: { xs: 3, md: 4 },
                     height: '100%',
