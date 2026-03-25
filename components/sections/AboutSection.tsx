@@ -9,6 +9,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import WorkIcon from '@mui/icons-material/Work'
 import SchoolIcon from '@mui/icons-material/School'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 const techStack = [
   'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL',
@@ -29,10 +30,16 @@ export default function AboutSection() {
       id="sobre-mi"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: 'background.paper',
+        background: '#0A0D18',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <AnimatedBackground orbs={[
+        { top: '-10%', right: '-5%', size: 450, color: 'rgba(41,121,255,0.13)', duration: 12 },
+        { bottom: '-15%', left: '-8%', size: 380, color: 'rgba(121,41,255,0.12)', duration: 10, delay: 4 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
             <Box

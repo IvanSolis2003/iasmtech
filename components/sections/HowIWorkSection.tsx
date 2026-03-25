@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 const steps = [
   {
@@ -41,10 +42,16 @@ export default function HowIWorkSection() {
       id="como-trabajo"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: 'background.paper',
+        background: '#0A0D18',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <AnimatedBackground orbs={[
+        { top: '-20%', left: '-10%', size: 500, color: 'rgba(121,41,255,0.15)', duration: 10 },
+        { bottom: '-20%', right: '-10%', size: 400, color: 'rgba(0,229,255,0.12)', duration: 13, delay: 2 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography
             variant="overline"

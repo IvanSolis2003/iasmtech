@@ -17,6 +17,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import EmailIcon from '@mui/icons-material/Email'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import SendIcon from '@mui/icons-material/Send'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -94,10 +95,16 @@ export default function ContactSection() {
       id="contacto"
       sx={{
         py: { xs: 8, md: 12 },
-        background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)',
+        background: '#0A0D18',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <AnimatedBackground orbs={[
+        { top: '-20%', right: '-10%', size: 500, color: 'rgba(0,229,255,0.13)', duration: 11 },
+        { bottom: '-20%', left: '-8%', size: 400, color: 'rgba(41,121,255,0.14)', duration: 9, delay: 4 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
             Contacto

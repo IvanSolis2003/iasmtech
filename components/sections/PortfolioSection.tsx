@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -21,7 +22,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
       <Box
         component="section"
         id="proyectos"
-        sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)' }}
+        sx={{ py: { xs: 8, md: 12 }, background: '#0A0A0F', position: 'relative', overflow: 'hidden' }}
       >
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
@@ -44,9 +45,13 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
     <Box
       component="section"
       id="proyectos"
-      sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)' }}
+      sx={{ py: { xs: 8, md: 12 }, background: '#0A0A0F', position: 'relative', overflow: 'hidden' }}
     >
-      <Container maxWidth="lg">
+      <AnimatedBackground orbs={[
+        { top: '-15%', right: '-10%', size: 500, color: 'rgba(41,121,255,0.14)', duration: 11 },
+        { bottom: '-20%', left: '-10%', size: 420, color: 'rgba(105,240,174,0.1)', duration: 9, delay: 3 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
             Trabajos

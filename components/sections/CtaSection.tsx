@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 export default function CtaSection() {
   return (
@@ -13,19 +14,14 @@ export default function CtaSection() {
         py: { xs: 10, md: 14 },
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: 'background.paper',
+        background: '#0A0A0F',
       }}
     >
-      <Box
-        sx={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: `
-            radial-gradient(ellipse 70% 60% at 50% 50%, rgba(41, 121, 255, 0.08), transparent)
-          `,
-          pointerEvents: 'none',
-        }}
-      />
+      <AnimatedBackground orbs={[
+        { top: '-30%', left: '10%', size: 600, color: 'rgba(41,121,255,0.18)', duration: 10 },
+        { bottom: '-30%', right: '10%', size: 500, color: 'rgba(0,229,255,0.12)', duration: 12, delay: 3 },
+        { top: '30%', left: '50%', size: 300, color: 'rgba(121,41,255,0.1)', duration: 8, delay: 1 },
+      ]} gridOpacity={0.05} />
 
       <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
         <Typography

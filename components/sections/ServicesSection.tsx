@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Chip from '@mui/material/Chip'
 import Button from '@mui/material/Button'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 import LanguageIcon from '@mui/icons-material/Language'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
@@ -74,18 +75,11 @@ export default function ServicesSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Fondo decorativo */}
-      <Box sx={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 800,
-        height: 800,
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(41,121,255,0.04) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+      <AnimatedBackground orbs={[
+        { top: '-20%', left: '-10%', size: 500, color: 'rgba(41,121,255,0.15)', duration: 10 },
+        { bottom: '-20%', right: '-10%', size: 450, color: 'rgba(255,215,64,0.08)', duration: 13, delay: 3 },
+        { top: '40%', right: '20%', size: 280, color: 'rgba(0,229,255,0.08)', duration: 8, delay: 1 },
+      ]} gridOpacity={0.04} />
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 7, md: 10 } }}>

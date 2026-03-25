@@ -8,6 +8,7 @@ import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import ArticleIcon from '@mui/icons-material/Article'
 import { type BlogPost } from '@/types'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 interface BlogSectionProps {
   posts: BlogPost[]
@@ -20,10 +21,16 @@ export default function BlogSection({ posts }: BlogSectionProps) {
       id="blog"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: 'background.paper',
+        background: '#0A0D18',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <AnimatedBackground orbs={[
+        { top: '-15%', left: '-10%', size: 420, color: 'rgba(41,121,255,0.12)', duration: 11 },
+        { bottom: '-20%', right: '-5%', size: 360, color: 'rgba(105,240,174,0.09)', duration: 14, delay: 2 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box
           sx={{
             display: 'flex',

@@ -9,6 +9,7 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import Button from '@mui/material/Button'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 const faqs = [
   {
@@ -56,10 +57,16 @@ export default function FaqSection() {
       id="faq"
       sx={{
         py: { xs: 8, md: 12 },
-        background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)',
+        background: '#0A0A0F',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="md">
+      <AnimatedBackground orbs={[
+        { top: '-20%', left: '20%', size: 400, color: 'rgba(0,229,255,0.1)', duration: 13 },
+        { bottom: '-15%', right: '15%', size: 350, color: 'rgba(41,121,255,0.12)', duration: 9, delay: 5 },
+      ]} gridOpacity={0.04} />
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography
             variant="overline"
