@@ -26,13 +26,13 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
             <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
-              Portafolio
+              Trabajos
             </Typography>
             <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
-              Proyectos Realizados
+              Esto es lo que puedo construir para ti
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Los proyectos se cargarán pronto.
+              Los trabajos se cargarán pronto.
             </Typography>
           </Box>
         </Container>
@@ -49,13 +49,13 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
-            Portafolio
+            Trabajos
           </Typography>
           <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
-            Proyectos Realizados
+            Esto es lo que puedo construir para ti
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 540, mx: 'auto' }}>
-            Soluciones reales construidas para clientes y proyectos personales.
+            Ejemplos reales de lo que desarrollo. Tu proyecto podría ser el siguiente.
           </Typography>
         </Box>
 

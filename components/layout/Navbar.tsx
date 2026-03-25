@@ -19,7 +19,7 @@ import CodeIcon from '@mui/icons-material/Code'
 
 const navItems = [
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Proyectos', href: '#proyectos' },
+  { label: 'Trabajos', href: '#proyectos' },
   { label: 'Sobre mí', href: '#sobre-mi' },
   { label: 'Blog', href: '#blog' },
   { label: 'Contacto', href: '#contacto' },

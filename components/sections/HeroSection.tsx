@@ -121,7 +121,7 @@ export default function HeroSection() {
                 transition: 'all 0.2s ease',
               }}
             >
-              Ver mis proyectos
+              Ver mis trabajos
             </Button>
             <Button
               variant="outlined"
