@@ -21,21 +21,43 @@ export default function HeroSection() {
         position: 'relative',
         overflow: 'hidden',
         background: '#0A0A0F',
+        animation: 'bgShift 12s ease-in-out infinite',
+        '@keyframes bgShift': {
+          '0%, 100%': { backgroundColor: '#0A0A0F' },
+          '50%': { backgroundColor: '#0A0D1A' },
+        },
       }}
     >
+      {/* Aurora superior — banda de color que pulsa */}
+      <Box sx={{
+        position: 'absolute',
+        top: '-30%',
+        left: '-20%',
+        right: '-20%',
+        height: '70%',
+        background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(41,121,255,0.22) 0%, rgba(0,229,255,0.06) 40%, transparent 70%)',
+        animation: 'auroraPulse 8s ease-in-out infinite',
+        '@keyframes auroraPulse': {
+          '0%, 100%': { opacity: 0.7, transform: 'scaleX(1)' },
+          '50%': { opacity: 1, transform: 'scaleX(1.08)' },
+        },
+        pointerEvents: 'none',
+      }} />
+
       {/* Orbe azul superior izquierdo */}
       <Box sx={{
         position: 'absolute',
-        top: '-15%',
-        left: '-10%',
-        width: { xs: 400, md: 700 },
-        height: { xs: 400, md: 700 },
+        top: '-10%',
+        left: '-15%',
+        width: { xs: 450, md: 750 },
+        height: { xs: 450, md: 750 },
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(41,121,255,0.18) 0%, transparent 70%)',
-        animation: 'floatA 8s ease-in-out infinite',
+        background: 'radial-gradient(circle, rgba(41,121,255,0.28) 0%, transparent 65%)',
+        animation: 'floatA 9s ease-in-out infinite',
         '@keyframes floatA': {
           '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '50%': { transform: 'translate(40px, 30px) scale(1.05)' },
+          '33%': { transform: 'translate(50px, 30px) scale(1.06)' },
+          '66%': { transform: 'translate(20px, 60px) scale(0.97)' },
         },
         pointerEvents: 'none',
       }} />
@@ -43,48 +65,71 @@ export default function HeroSection() {
       {/* Orbe cyan inferior derecho */}
       <Box sx={{
         position: 'absolute',
-        bottom: '-20%',
-        right: '-10%',
-        width: { xs: 350, md: 600 },
-        height: { xs: 350, md: 600 },
+        bottom: '-25%',
+        right: '-15%',
+        width: { xs: 380, md: 650 },
+        height: { xs: 380, md: 650 },
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(0,229,255,0.1) 0%, transparent 70%)',
-        animation: 'floatB 10s ease-in-out infinite',
+        background: 'radial-gradient(circle, rgba(0,229,255,0.18) 0%, transparent 65%)',
+        animation: 'floatB 11s ease-in-out infinite',
         '@keyframes floatB': {
           '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '50%': { transform: 'translate(-30px, -40px) scale(1.08)' },
+          '33%': { transform: 'translate(-40px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-70px, -20px) scale(0.95)' },
         },
         pointerEvents: 'none',
       }} />
 
-      {/* Orbe azul centro derecho */}
+      {/* Orbe magenta centro izquierdo */}
       <Box sx={{
         position: 'absolute',
-        top: '40%',
-        right: '15%',
-        width: 250,
-        height: 250,
+        top: '55%',
+        left: '5%',
+        width: { xs: 200, md: 350 },
+        height: { xs: 200, md: 350 },
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(41,121,255,0.1) 0%, transparent 70%)',
-        animation: 'floatC 12s ease-in-out infinite',
+        background: 'radial-gradient(circle, rgba(121,41,255,0.15) 0%, transparent 70%)',
+        animation: 'floatC 14s ease-in-out infinite',
         '@keyframes floatC': {
           '0%, 100%': { transform: 'translate(0, 0)' },
-          '50%': { transform: 'translate(20px, -25px)' },
+          '50%': { transform: 'translate(30px, -40px) scale(1.1)' },
         },
         pointerEvents: 'none',
       }} />
 
-      {/* Grid de fondo */}
+      {/* Orbe pequeño cyan centro derecho */}
       <Box sx={{
         position: 'absolute',
-        inset: 0,
+        top: '30%',
+        right: '10%',
+        width: { xs: 150, md: 280 },
+        height: { xs: 150, md: 280 },
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(0,229,255,0.12) 0%, transparent 70%)',
+        animation: 'floatD 7s ease-in-out infinite',
+        '@keyframes floatD': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '50%': { transform: 'translate(-20px, 30px) scale(1.15)' },
+        },
+        pointerEvents: 'none',
+      }} />
+
+      {/* Grid de fondo con movimiento lento */}
+      <Box sx={{
+        position: 'absolute',
+        inset: '-60px',
         backgroundImage: `
-          linear-gradient(rgba(41, 121, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(41, 121, 255, 0.04) 1px, transparent 1px)
+          linear-gradient(rgba(41, 121, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(41, 121, 255, 0.06) 1px, transparent 1px)
         `,
         backgroundSize: '60px 60px',
-        maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)',
-        WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)',
+        animation: 'gridMove 20s linear infinite',
+        '@keyframes gridMove': {
+          '0%': { transform: 'translate(0, 0)' },
+          '100%': { transform: 'translate(60px, 60px)' },
+        },
+        maskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%)',
+        WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%)',
         pointerEvents: 'none',
       }} />
 
