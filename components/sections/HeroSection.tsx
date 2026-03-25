@@ -165,7 +165,7 @@ export default function HeroSection() {
               fontWeight: 900,
               lineHeight: 1.05,
               letterSpacing: '-2px',
-              color: '#F0F0F0',
+              color: 'text.primary',
             }}
           >
             Tu negocio merece{' '}
@@ -208,7 +208,7 @@ export default function HeroSection() {
               fontWeight: 400,
               fontSize: { xs: '1.1rem', md: '1.35rem' },
               lineHeight: 1.6,
-              color: 'rgba(240,240,240,0.6)',
+              color: 'text.secondary',
               maxWidth: 620,
               mx: 'auto',
             }}
@@ -283,8 +283,8 @@ export default function HeroSection() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: 1,
-                  backgroundColor: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: 'rgba(41,121,255,0.07)',
+                  border: '1px solid rgba(41,121,255,0.18)',
                   borderRadius: '8px',
                   px: '14px',
                   py: '8px',
@@ -303,7 +303,7 @@ export default function HeroSection() {
                   sx={{
                     fontWeight: 600,
                     fontSize: '0.78rem',
-                    color: 'rgba(240,240,240,0.75)',
+                    color: 'text.secondary',
                     letterSpacing: '0.02em',
                     lineHeight: 1,
                   }}
@@ -328,7 +328,7 @@ export default function HeroSection() {
           '50%': { transform: 'translateX(-50%) translateY(8px)' },
         },
       }}>
-        <KeyboardArrowDownIcon sx={{ color: 'rgba(240,240,240,0.3)', fontSize: 32 }} />
+        <KeyboardArrowDownIcon sx={{ color: 'text.disabled', fontSize: 32 }} />
       </Box>
     </Box>
   )

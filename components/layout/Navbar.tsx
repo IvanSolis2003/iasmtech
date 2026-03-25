@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -29,6 +30,8 @@ const navItems = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const scrolled = useScrollTrigger({ disableHysteresis: true, threshold: 50 })
+  const theme = useTheme()
+  const navBg = theme.palette.mode === 'dark' ? 'rgba(10,10,15,0.92)' : 'rgba(245,247,255,0.92)'
 
   return (
     <>
@@ -36,9 +39,7 @@ export default function Navbar() {
         position="fixed"
         elevation={scrolled ? 4 : 0}
         sx={{
-          backgroundColor: scrolled
-            ? 'rgba(10, 10, 15, 0.95)'
-            : 'transparent',
+          backgroundColor: scrolled ? navBg : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled
             ? '1px solid rgba(41, 121, 255, 0.15)'
