@@ -12,7 +12,7 @@ const jsonLdPerson = {
   url: BASE_URL,
   sameAs: [
     'https://github.com/IvanSolis2003',
-    'https://www.linkedin.com/in/iv%C3%A1n-sol%C3%ADs-manqueo-57a00b2b8',
+    'https://www.linkedin.com/in/iv%C3%A1n-sol%C3%ADs-m',
   ],
   email: 'ivan.solis20.m@gmail.com',
   address: {

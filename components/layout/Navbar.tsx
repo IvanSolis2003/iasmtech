@@ -20,11 +20,11 @@ import CodeIcon from '@mui/icons-material/Code'
 import ThemeToggle from '@/components/ui/ThemeToggle'
 
 const navItems = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Trabajos', href: '#proyectos' },
-  { label: 'Sobre mí', href: '#sobre-mi' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Trabajos', href: '/#proyectos' },
+  { label: 'Sobre mí', href: '/#sobre-mi' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 export default function Navbar() {
@@ -74,7 +74,7 @@ export default function Navbar() {
             <ThemeToggle />
             <Button
               variant="contained"
-              href="#contacto"
+              href="/#contacto"
               sx={{ ml: 1 }}
             >
               Cotizar proyecto
@@ -130,7 +130,7 @@ export default function Navbar() {
             <Button
               variant="contained"
               fullWidth
-              href="#contacto"
+              href="/#contacto"
               onClick={() => setMobileOpen(false)}
             >
               Cotizar proyecto

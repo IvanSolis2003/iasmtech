@@ -9,14 +9,14 @@ import CodeIcon from '@mui/icons-material/Code'
 
 const socialLinks = [
   { icon: <GitHubIcon />, href: 'https://github.com/IvanSolis2003', label: 'GitHub' },
-  { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/iván-solís-manqueo-57a00b2b8', label: 'LinkedIn' },
+  { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/iván-solís-m', label: 'LinkedIn' },
 ]
 
 const footerLinks = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 export default function Footer() {

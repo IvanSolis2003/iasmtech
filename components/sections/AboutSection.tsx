@@ -138,7 +138,7 @@ export default function AboutSection() {
               <Button
                 variant="outlined"
                 startIcon={<LinkedInIcon />}
-                href="https://www.linkedin.com/in/iván-solís-manqueo-57a00b2b8"
+                href="https://www.linkedin.com/in/iván-solís-m"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ borderColor: 'rgba(41, 121, 255, 0.5)' }}

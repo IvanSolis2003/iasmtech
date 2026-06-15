@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: Props) {
         component="main"
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(135deg, #0A0A0F 0%, #12121A 100%)',
+          backgroundColor: 'background.default',
           pt: { xs: 10, md: 14 },
           pb: { xs: 8, md: 12 },
         }}
