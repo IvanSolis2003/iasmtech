@@ -1,5 +1,6 @@
 'use client'
 
+import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -10,6 +11,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 export default function HeroSection() {
+  const isDark = useTheme().palette.mode === 'dark'
   return (
     <Box
       component="section"
@@ -267,12 +269,12 @@ export default function HeroSection() {
 
           <Box sx={{ display: 'flex', gap: 1.5, justifyContent: 'center', flexWrap: 'wrap' }}>
             {[
-              { slug: 'nextdotjs', color: 'FFFFFF', name: 'Next.js' },
-              { slug: 'react', color: '61DAFB', name: 'React' },
-              { slug: 'typescript', color: '3178C6', name: 'TypeScript' },
-              { slug: 'nodedotjs', color: '339933', name: 'Node.js' },
-              { slug: 'postgresql', color: '4169E1', name: 'PostgreSQL' },
-              { slug: 'react', color: '61DAFB', name: 'React Native' },
+              { icon: 'nextjs/nextjs-original', name: 'Next.js', invert: true },
+              { icon: 'react/react-original', name: 'React', invert: false },
+              { icon: 'typescript/typescript-original', name: 'TypeScript', invert: false },
+              { icon: 'nodejs/nodejs-original', name: 'Node.js', invert: false },
+              { icon: 'postgresql/postgresql-original', name: 'PostgreSQL', invert: false },
+              { icon: 'react/react-original', name: 'React Native', invert: false },
             ].map((tech) => (
               <Box
                 key={tech.name}
@@ -289,11 +291,15 @@ export default function HeroSection() {
               >
                 <Box
                   component="img"
-                  src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech.icon}.svg`}
                   alt={tech.name}
                   width={24}
                   height={24}
-                  sx={{ display: 'block', flexShrink: 0 }}
+                  sx={{
+                    display: 'block',
+                    flexShrink: 0,
+                    ...(tech.invert && isDark && { filter: 'invert(1)' }),
+                  }}
                 />
                 <Typography
                   variant="caption"
