@@ -213,7 +213,7 @@ export default function HeroSection() {
               mx: 'auto',
             }}
           >
-            Desarrollo web, apps y automatización a medida.
+            Desarrollo web, apps y automatización a medida desde Talca, Chile.
             <br />
             Resultados que se notan en tu negocio.
           </Typography>

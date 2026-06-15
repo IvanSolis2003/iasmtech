@@ -52,7 +52,7 @@ export default function CtaSection() {
           sx={{ mb: 5, maxWidth: 480, mx: 'auto', lineHeight: 1.8 }}
         >
           La primera conversación es sin costo y sin compromiso.
-          Cuéntame tu proyecto y te digo si puedo ayudarte.
+          Desde Talca para todo Chile — cuéntame tu proyecto.
         </Typography>
 
         <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>

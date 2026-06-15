@@ -1,5 +1,40 @@
+import Script from 'next/script'
 import { prisma } from '@/lib/prisma'
 import Navbar from '@/components/layout/Navbar'
+
+const BASE_URL = 'https://iasmtech.cl'
+
+const jsonLdPerson = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Iván Solís Manqueo',
+  jobTitle: 'Full Stack Developer',
+  url: BASE_URL,
+  sameAs: [
+    'https://github.com/IvanSolis2003',
+    'https://www.linkedin.com/in/iv%C3%A1n-sol%C3%ADs-manqueo-57a00b2b8',
+  ],
+  email: 'ivan.solis20.m@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Talca',
+    addressRegion: 'Maule',
+    addressCountry: 'CL',
+  },
+  knowsAbout: [
+    'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL',
+    'React Native', 'n8n', 'Desarrollo Web', 'Apps Móviles',
+  ],
+}
+
+const jsonLdWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'iasmtech',
+  url: BASE_URL,
+  description: 'Desarrollo web, apps móviles y automatización para PYMES y emprendedores en Talca, Chile.',
+  author: { '@id': BASE_URL },
+}
 import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/sections/HeroSection'
 import ServicesSection from '@/components/sections/ServicesSection'
@@ -38,6 +73,16 @@ export default async function Home() {
 
   return (
     <>
+      <Script
+        id="json-ld-person"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+      />
+      <Script
+        id="json-ld-website"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+      />
       <Navbar />
       <main>
         <HeroSection />
