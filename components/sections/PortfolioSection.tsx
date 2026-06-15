@@ -78,7 +78,6 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
                   overflow: 'hidden',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: '0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(41,121,255,0.4)',
                     borderColor: 'rgba(41, 121, 255, 0.4)',
                     '& .project-overlay': { opacity: 1 },
                     '& .project-img': { transform: 'scale(1.05)' },

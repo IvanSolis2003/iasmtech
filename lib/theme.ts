@@ -25,12 +25,12 @@ export function buildTheme(mode: PaletteMode) {
     },
     typography: {
       fontFamily: '"Inter", "Roboto", sans-serif',
-      h1: { fontWeight: 800, fontSize: '3.5rem' },
-      h2: { fontWeight: 700, fontSize: '2.5rem' },
-      h3: { fontWeight: 600 },
+      h1: { fontWeight: 800, fontSize: '3.5rem', letterSpacing: '-0.03em' },
+      h2: { fontWeight: 700, fontSize: '2.5rem', letterSpacing: '-0.02em' },
+      h3: { fontWeight: 600, letterSpacing: '-0.01em' },
     },
     shape: {
-      borderRadius: 12,
+      borderRadius: 24,
     },
     components: {
       MuiButton: {
@@ -38,7 +38,7 @@ export function buildTheme(mode: PaletteMode) {
           root: {
             textTransform: 'none',
             fontWeight: 600,
-            borderRadius: 8,
+            borderRadius: 50,
           },
         },
       },
@@ -46,7 +46,32 @@ export function buildTheme(mode: PaletteMode) {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
+            borderRadius: 24,
             border: '1px solid rgba(41, 121, 255, 0.15)',
+          },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            borderRadius: 50,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            borderRadius: 50,
+            '&.MuiInputBase-multiline': {
+              borderRadius: 24,
+            },
+          },
+        },
+      },
+      MuiAccordion: {
+        styleOverrides: {
+          root: {
+            borderRadius: '24px !important',
           },
         },
       },

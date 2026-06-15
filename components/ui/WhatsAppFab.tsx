@@ -57,7 +57,7 @@ export default function WhatsAppFab() {
         <Box
           sx={{
             backgroundColor: '#ffffff',
-            borderRadius: '12px',
+            borderRadius: '24px',
             px: 2,
             py: 1.2,
             display: 'flex',

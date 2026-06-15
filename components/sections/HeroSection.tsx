@@ -231,11 +231,9 @@ export default function HeroSection() {
                 fontSize: '1rem',
                 fontWeight: 700,
                 background: 'linear-gradient(90deg, #2979FF 0%, #0046CB 100%)',
-                boxShadow: '0 0 30px rgba(41, 121, 255, 0.5), 0 4px 20px rgba(0,0,0,0.3)',
                 '&:hover': {
-                  boxShadow: '0 0 50px rgba(41, 121, 255, 0.8), 0 4px 20px rgba(0,0,0,0.3)',
+                  opacity: 0.9,
                   transform: 'translateY(-3px)',
-                  background: 'linear-gradient(90deg, #4090FF 0%, #2979FF 100%)',
                 },
                 transition: 'all 0.25s ease',
               }}
@@ -257,9 +255,8 @@ export default function HeroSection() {
                 backgroundColor: 'rgba(41,121,255,0.05)',
                 '&:hover': {
                   borderColor: '#2979FF',
-                  backgroundColor: 'rgba(41, 121, 255, 0.12)',
+                  backgroundColor: 'rgba(41, 121, 255, 0.1)',
                   transform: 'translateY(-3px)',
-                  boxShadow: '0 0 20px rgba(41,121,255,0.2)',
                 },
                 transition: 'all 0.25s ease',
               }}
@@ -285,7 +282,7 @@ export default function HeroSection() {
                   gap: 1,
                   backgroundColor: 'rgba(41,121,255,0.07)',
                   border: '1px solid rgba(41,121,255,0.18)',
-                  borderRadius: '8px',
+                  borderRadius: '50px',
                   px: '14px',
                   py: '8px',
                 }}

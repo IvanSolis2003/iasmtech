@@ -75,7 +75,7 @@ export default function Navbar() {
             <Button
               variant="contained"
               href="#contacto"
-              sx={{ ml: 1, boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}
+              sx={{ ml: 1 }}
             >
               Cotizar proyecto
             </Button>

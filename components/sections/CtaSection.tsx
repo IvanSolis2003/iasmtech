@@ -65,9 +65,8 @@ export default function CtaSection() {
               px: 4,
               py: 1.5,
               fontSize: '1rem',
-              boxShadow: '0 0 30px rgba(41, 121, 255, 0.4)',
               '&:hover': {
-                boxShadow: '0 0 40px rgba(41, 121, 255, 0.6)',
+                opacity: 0.9,
                 transform: 'translateY(-2px)',
               },
               transition: 'all 0.2s ease',

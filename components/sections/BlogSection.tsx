@@ -65,7 +65,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
               textAlign: 'center',
               py: 8,
               border: '1px dashed rgba(41, 121, 255, 0.2)',
-              borderRadius: 3,
+              borderRadius: '24px',
             }}
           >
             <ArticleIcon sx={{ fontSize: 64, color: 'rgba(41,121,255,0.2)', mb: 2 }} />

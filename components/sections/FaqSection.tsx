@@ -95,7 +95,7 @@ export default function FaqSection() {
                   expanded === `panel${index}`
                     ? 'rgba(41, 121, 255, 0.4)'
                     : 'rgba(41, 121, 255, 0.1)',
-                borderRadius: '12px !important',
+                borderRadius: '24px !important',
                 mb: 1.5,
                 '&:before': { display: 'none' },
                 transition: 'border-color 0.2s ease',
@@ -139,7 +139,9 @@ export default function FaqSection() {
           <Button
             variant="contained"
             href="#contacto"
-            sx={{ boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}
+            sx={{
+              '&:hover': { opacity: 0.9 },
+            }}
           >
             Pregúntame directamente
           </Button>

@@ -174,7 +174,7 @@ export default function ContactSection() {
               sx={{
                 backgroundColor: 'background.paper',
                 border: '1px solid rgba(41, 121, 255, 0.15)',
-                borderRadius: 3,
+                borderRadius: '24px',
                 p: { xs: 3, md: 4 },
               }}
             >
@@ -226,7 +226,7 @@ export default function ContactSection() {
                   <Button type="submit" variant="contained" size="large" fullWidth
                     disabled={status === 'loading'}
                     endIcon={status === 'loading' ? <CircularProgress size={18} color="inherit" /> : <SendIcon />}
-                    sx={{ py: 1.5, boxShadow: '0 0 20px rgba(41, 121, 255, 0.3)' }}>
+                    sx={{ py: 1.5 }}>
                     {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
                   </Button>
                 </Grid>

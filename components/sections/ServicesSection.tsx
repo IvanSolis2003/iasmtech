@@ -108,7 +108,7 @@ export default function ServicesSection() {
               <Box
                 sx={{
                   position: 'relative',
-                  borderRadius: '16px',
+                  borderRadius: '24px',
                   padding: '1px',
                   background: `linear-gradient(135deg, ${service.color}40 0%, transparent 50%, ${service.color}20 100%)`,
                   height: '100%',
@@ -132,7 +132,7 @@ export default function ServicesSection() {
                   sx={{
                     position: 'absolute',
                     inset: -1,
-                    borderRadius: '16px',
+                    borderRadius: '24px',
                     boxShadow: `0 0 30px ${service.glow}`,
                     opacity: 0,
                     transition: 'opacity 0.3s ease',
@@ -144,7 +144,7 @@ export default function ServicesSection() {
                 <Box
                   sx={{
                     backgroundColor: 'background.default',
-                    borderRadius: '15px',
+                    borderRadius: '23px',
                     p: { xs: 3, md: 4 },
                     height: '100%',
                     display: 'flex',
@@ -216,7 +216,7 @@ export default function ServicesSection() {
                       py: 0.6,
                       fontSize: '0.8rem',
                       fontWeight: 600,
-                      borderRadius: '8px',
+                      borderRadius: '50px',
                       textTransform: 'none',
                       '&:hover': {
                         backgroundColor: `${service.color}15`,
