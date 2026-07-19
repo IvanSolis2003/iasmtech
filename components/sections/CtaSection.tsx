@@ -17,6 +17,32 @@ export default function CtaSection() {
         backgroundColor: 'background.paper',
       }}
     >
+      {/* Onda SVG decorativa superior */}
+      <Box
+        component="svg"
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: { xs: 50, md: 90 },
+          display: 'block',
+        }}
+      >
+        <path
+          d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,48 L1440,0 L0,0 Z"
+          fill="rgba(41,121,255,0.08)"
+        />
+        <path
+          d="M0,32 C240,96 480,16 720,48 C960,80 1200,16 1440,64"
+          fill="none"
+          stroke="rgba(0,229,255,0.35)"
+          strokeWidth="2"
+        />
+      </Box>
+
       <AnimatedBackground orbs={[
         { top: '-30%', left: '10%', size: 600, color: 'rgba(41,121,255,0.18)', duration: 10 },
         { bottom: '-30%', right: '10%', size: 500, color: 'rgba(0,229,255,0.12)', duration: 12, delay: 3 },

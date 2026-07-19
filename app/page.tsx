@@ -37,7 +37,10 @@ const jsonLdWebSite = {
 }
 import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/sections/HeroSection'
+import StatsSection from '@/components/sections/StatsSection'
 import ServicesSection from '@/components/sections/ServicesSection'
+import TechMarquee from '@/components/sections/TechMarquee'
+import CapabilitiesSection from '@/components/sections/CapabilitiesSection'
 import HowIWorkSection from '@/components/sections/HowIWorkSection'
 import PortfolioSection from '@/components/sections/PortfolioSection'
 import AboutSection from '@/components/sections/AboutSection'
@@ -86,14 +89,19 @@ export default async function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <StatsSection />
         <ScrollReveal delay={0}>
           <ServicesSection />
         </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <HowIWorkSection />
+        <TechMarquee />
+        <ScrollReveal delay={0}>
+          <CapabilitiesSection />
         </ScrollReveal>
         <ScrollReveal delay={0}>
           <PortfolioSection projects={projects} />
+        </ScrollReveal>
+        <ScrollReveal delay={100}>
+          <HowIWorkSection />
         </ScrollReveal>
         <ScrollReveal delay={0}>
           <AboutSection />
