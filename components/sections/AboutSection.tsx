@@ -30,7 +30,7 @@ export default function AboutSection() {
       id="sobre-mi"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: 'background.default',
+        backgroundColor: 'transparent',
         position: 'relative',
         overflow: 'hidden',
       }}

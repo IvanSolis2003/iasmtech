@@ -31,7 +31,7 @@ export default function TechMarquee() {
       component="section"
       sx={{
         py: { xs: 6, md: 8 },
-        backgroundColor: 'background.default',
+        backgroundColor: 'transparent',
         position: 'relative',
         overflow: 'hidden',
         borderTop: '1px solid rgba(41, 121, 255, 0.08)',

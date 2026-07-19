@@ -95,10 +95,10 @@ export default function ServicesSection() {
             Servicios
           </Typography>
           <Typography variant="h2" sx={{ mt: 1, mb: 2, fontWeight: 800 }}>
-            ¿Qué puedo hacer por tu negocio en Talca?
+            ¿Qué puedo hacer por tu negocio?
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: 'auto', fontSize: '1.05rem' }}>
-            Sin tecnicismos. Resultados concretos para que tu negocio crezca.
+            Sin tecnicismos. Resultados concretos para que tu negocio crezca, estés donde estés en Chile.
           </Typography>
         </Box>
 

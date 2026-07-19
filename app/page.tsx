@@ -50,6 +50,7 @@ import BlogSection from '@/components/sections/BlogSection'
 import ContactSection from '@/components/sections/ContactSection'
 import WhatsAppFab from '@/components/ui/WhatsAppFab'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import TechBackground from '@/components/ui/TechBackground'
 
 async function getProjects() {
   try {
@@ -86,8 +87,9 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
       />
+      <TechBackground />
       <Navbar />
-      <main>
+      <main style={{ position: 'relative', zIndex: 1 }}>
         <HeroSection />
         <StatsSection />
         <ScrollReveal delay={0}>
