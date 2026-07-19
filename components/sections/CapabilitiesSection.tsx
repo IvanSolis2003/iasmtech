@@ -5,15 +5,16 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import Image from 'next/image'
 import AnimatedBackground from '@/components/ui/AnimatedBackground'
-import { WebsiteMockup, AutomationMockup, DashboardMockup } from '@/components/ui/Mockups'
 
 type Capability = {
   overline: string
   title: string
   description: string
   bullets: string[]
-  mockup: (color: string) => React.ReactNode
+  image: string
+  alt: string
   color: string
 }
 
@@ -28,7 +29,8 @@ const capabilities: Capability[] = [
       'Sistemas de gestión a medida',
       'Apps móviles Android con React Native',
     ],
-    mockup: (color) => <WebsiteMockup color={color} />,
+    image: '/assets/cap-desarrollo.jpg',
+    alt: 'Desarrollo de software a medida',
     color: '#2979FF',
   },
   {
@@ -41,7 +43,8 @@ const capabilities: Capability[] = [
       'Integraciones con WhatsApp y email',
       'IA aplicada a tareas concretas de tu negocio',
     ],
-    mockup: (color) => <AutomationMockup color={color} />,
+    image: '/assets/cap-automatizacion.jpg',
+    alt: 'Automatización e inteligencia artificial aplicada',
     color: '#00E5FF',
   },
   {
@@ -54,7 +57,8 @@ const capabilities: Capability[] = [
       'Actualizaciones y mejoras continuas',
       'Soporte directo por WhatsApp',
     ],
-    mockup: (color) => <DashboardMockup color={color} />,
+    image: '/assets/cap-soporte.jpg',
+    alt: 'Soporte, monitoreo y mantención continua',
     color: '#69F0AE',
   },
 ]
@@ -163,30 +167,38 @@ export default function CapabilitiesSection() {
                     <Box
                       sx={{
                         borderRadius: '23px',
-                        backgroundColor: 'background.default',
-                        p: { xs: 2.5, md: 3 },
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        position: 'relative',
                         overflow: 'hidden',
+                        position: 'relative',
+                        aspectRatio: '4 / 3',
+                        backgroundColor: 'background.default',
                       }}
                     >
-                      {/* Glow de fondo */}
+                      <Image
+                        src={cap.image}
+                        alt={cap.alt}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 50vw"
+                        style={{ objectFit: 'cover' }}
+                      />
+                      {/* Overlay de marca para integrar con el tema oscuro */}
                       <Box
                         sx={{
                           position: 'absolute',
-                          width: 300,
-                          height: 300,
-                          borderRadius: '50%',
-                          background: `radial-gradient(circle, ${cap.color}18 0%, transparent 70%)`,
+                          inset: 0,
+                          background: `linear-gradient(135deg, ${cap.color}55 0%, rgba(10,10,15,0.35) 45%, rgba(10,10,15,0.8) 100%)`,
                           pointerEvents: 'none',
                         }}
                       />
-                      {/* Mockup SVG */}
-                      <Box sx={{ position: 'relative', width: '100%' }}>
-                        {cap.mockup(cap.color)}
-                      </Box>
+                      {/* Borde interior sutil */}
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          inset: 0,
+                          borderRadius: '23px',
+                          border: `1px solid ${cap.color}30`,
+                          pointerEvents: 'none',
+                        }}
+                      />
                     </Box>
                   </Box>
                 </Grid>
