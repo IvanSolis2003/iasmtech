@@ -9,6 +9,7 @@ import Chip from '@mui/material/Chip'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { WebsiteMockup, DashboardMockup } from '@/components/ui/Mockups'
 
 export default function HeroSection() {
   const isDark = useTheme().palette.mode === 'dark'
@@ -129,6 +130,38 @@ export default function HeroSection() {
         WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%)',
         pointerEvents: 'none',
       }} />
+
+      {/* Mockup decorativo — navegador (superior izquierdo) */}
+      <Box sx={{
+        display: { xs: 'none', lg: 'block' },
+        position: 'absolute',
+        top: '14%',
+        left: '-4%',
+        width: 340,
+        opacity: 0.4,
+        transform: 'rotate(-8deg)',
+        filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }}>
+        <WebsiteMockup color="#2979FF" />
+      </Box>
+
+      {/* Mockup decorativo — dashboard (inferior derecho) */}
+      <Box sx={{
+        display: { xs: 'none', lg: 'block' },
+        position: 'absolute',
+        bottom: '10%',
+        right: '-4%',
+        width: 340,
+        opacity: 0.4,
+        transform: 'rotate(8deg)',
+        filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }}>
+        <DashboardMockup color="#00E5FF" />
+      </Box>
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ maxWidth: 860, mx: 'auto', textAlign: 'center' }}>

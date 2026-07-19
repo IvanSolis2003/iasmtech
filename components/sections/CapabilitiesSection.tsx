@@ -5,18 +5,15 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import CodeIcon from '@mui/icons-material/Code'
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
-import ShieldIcon from '@mui/icons-material/Shield'
-import type { SvgIconComponent } from '@mui/icons-material'
 import AnimatedBackground from '@/components/ui/AnimatedBackground'
+import { WebsiteMockup, AutomationMockup, DashboardMockup } from '@/components/ui/Mockups'
 
 type Capability = {
   overline: string
   title: string
   description: string
   bullets: string[]
-  icon: SvgIconComponent
+  mockup: (color: string) => React.ReactNode
   color: string
 }
 
@@ -31,7 +28,7 @@ const capabilities: Capability[] = [
       'Sistemas de gestión a medida',
       'Apps móviles Android con React Native',
     ],
-    icon: CodeIcon,
+    mockup: (color) => <WebsiteMockup color={color} />,
     color: '#2979FF',
   },
   {
@@ -44,7 +41,7 @@ const capabilities: Capability[] = [
       'Integraciones con WhatsApp y email',
       'IA aplicada a tareas concretas de tu negocio',
     ],
-    icon: AutoAwesomeIcon,
+    mockup: (color) => <AutomationMockup color={color} />,
     color: '#00E5FF',
   },
   {
@@ -57,7 +54,7 @@ const capabilities: Capability[] = [
       'Actualizaciones y mejoras continuas',
       'Soporte directo por WhatsApp',
     ],
-    icon: ShieldIcon,
+    mockup: (color) => <DashboardMockup color={color} />,
     color: '#69F0AE',
   },
 ]
@@ -101,7 +98,6 @@ export default function CapabilitiesSection() {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 8, md: 12 } }}>
           {capabilities.map((cap, index) => {
             const reversed = index % 2 === 1
-            const Icon = cap.icon
             return (
               <Grid
                 key={cap.title}
@@ -168,7 +164,7 @@ export default function CapabilitiesSection() {
                       sx={{
                         borderRadius: '23px',
                         backgroundColor: 'background.default',
-                        minHeight: { xs: 220, md: 300 },
+                        p: { xs: 2.5, md: 3 },
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -180,43 +176,16 @@ export default function CapabilitiesSection() {
                       <Box
                         sx={{
                           position: 'absolute',
-                          width: 260,
-                          height: 260,
+                          width: 300,
+                          height: 300,
                           borderRadius: '50%',
-                          background: `radial-gradient(circle, ${cap.color}22 0%, transparent 70%)`,
+                          background: `radial-gradient(circle, ${cap.color}18 0%, transparent 70%)`,
+                          pointerEvents: 'none',
                         }}
                       />
-                      {/* Grilla decorativa */}
-                      <Box
-                        sx={{
-                          position: 'absolute',
-                          inset: 0,
-                          backgroundImage: `
-                            linear-gradient(${cap.color}10 1px, transparent 1px),
-                            linear-gradient(90deg, ${cap.color}10 1px, transparent 1px)
-                          `,
-                          backgroundSize: '32px 32px',
-                          maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%)',
-                          WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%)',
-                        }}
-                      />
-                      {/* Ícono grande */}
-                      <Box
-                        sx={{
-                          position: 'relative',
-                          width: 120,
-                          height: 120,
-                          borderRadius: '28px',
-                          backgroundColor: `${cap.color}15`,
-                          border: `1px solid ${cap.color}35`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: cap.color,
-                          boxShadow: `0 0 40px ${cap.color}30`,
-                        }}
-                      >
-                        <Icon sx={{ fontSize: 60 }} />
+                      {/* Mockup SVG */}
+                      <Box sx={{ position: 'relative', width: '100%' }}>
+                        {cap.mockup(cap.color)}
                       </Box>
                     </Box>
                   </Box>
