@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import { ColorModeProvider } from '@/lib/ColorModeContext'
 import './globals.css'
 
@@ -64,6 +65,11 @@ export default function RootLayout({
             <Analytics />
           </ColorModeProvider>
         </AppRouterCacheProvider>
+        <Script
+          src="https://iasm-pulse.vercel.app/track.js"
+          data-site="iasmtech.cl"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
