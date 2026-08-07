@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -16,7 +17,6 @@ import Box from '@mui/material/Box'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import CodeIcon from '@mui/icons-material/Code'
 import ThemeToggle from '@/components/ui/ThemeToggle'
 
 const navItems = [
@@ -49,7 +49,14 @@ export default function Navbar() {
       >
         <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <CodeIcon sx={{ color: 'primary.main', fontSize: 28 }} />
+            <Image
+              src="/assets/logo-icon.png"
+              alt="iasmtech"
+              width={128}
+              height={128}
+              style={{ width: 32, height: 32 }}
+              priority
+            />
             <Typography
               variant="h6"
               sx={{ fontWeight: 800, color: 'text.primary', letterSpacing: '-0.5px' }}
