@@ -34,6 +34,8 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
+        position: 'relative',
+        zIndex: 1,
         backgroundColor: 'background.paper',
         borderTop: '1px solid rgba(41, 121, 255, 0.15)',
         py: 6,
