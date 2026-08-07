@@ -67,7 +67,7 @@ export default function RootLayout({
         </AppRouterCacheProvider>
         <Script
           src="https://iasm-pulse.vercel.app/track.js"
-          data-site="iasmtech.cl"
+          data-site="iasmtech.com"
           strategy="afterInteractive"
         />
       </body>
