@@ -34,8 +34,8 @@ const contactInfo = [
   {
     icon: <WhatsAppIcon />,
     label: 'WhatsApp',
-    value: '+56 9 9045 7931',
-    href: 'https://wa.me/56990457931',
+    value: '+56 9 5307 4204',
+    href: 'https://wa.me/56953074204',
     color: '#4caf50',
   },
   {

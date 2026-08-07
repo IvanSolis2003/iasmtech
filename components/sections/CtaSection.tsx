@@ -103,7 +103,7 @@ export default function CtaSection() {
           <Button
             variant="outlined"
             size="large"
-            href="https://wa.me/56990457931?text=Hola%20Iván%2C%20me%20interesa%20cotizar%20un%20proyecto%20contigo."
+            href="https://wa.me/56953074204?text=Hola%20Iván%2C%20me%20interesa%20cotizar%20un%20proyecto%20contigo."
             target="_blank"
             rel="noopener noreferrer"
             startIcon={<WhatsAppIcon />}

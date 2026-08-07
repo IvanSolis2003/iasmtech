@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import CloseIcon from '@mui/icons-material/Close'
 
-const WA_NUMBER = '56990457931'
+const WA_NUMBER = '56953074204'
 const WA_MESSAGE = encodeURIComponent('Hola Iván, me interesa cotizar un proyecto contigo.')
 const STORAGE_KEY = 'wa_bubble_dismissed'
 
