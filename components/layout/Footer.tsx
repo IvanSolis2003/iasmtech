@@ -42,14 +42,14 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Box
           sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1.4fr 1fr 1fr' },
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
             gap: 5,
             mb: 5,
           }}
         >
-          <Box sx={{ gridColumn: { xs: '1', sm: '1 / -1', md: 'auto' } }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+          <Box sx={{ flex: { md: '1.4 1 0' }, textAlign: { xs: 'center', md: 'left' } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 1, mb: 1.5 }}>
               <Image
                 src="/assets/logo-icon.png"
                 alt="iasmtech"
@@ -61,10 +61,10 @@ export default function Footer() {
                 iasm<Box component="span" sx={{ color: 'primary.main' }}>tech</Box>
               </Typography>
             </Box>
-            <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 300, mb: 2.5 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 300, mx: { xs: 'auto', md: 0 }, mb: 2.5 }}>
               Desarrollo web y soluciones digitales para PYMES en Talca y todo Chile.
             </Typography>
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={1} sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}>
               {socialLinks.map((social) => (
                 <IconButton
                   key={social.label}
@@ -83,13 +83,18 @@ export default function Footer() {
             </Stack>
           </Box>
 
-          <Box>
+          <Box sx={{ flex: { md: '1 1 0' }, textAlign: { xs: 'center', md: 'left' } }}>
             <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 2 }}>
               Contacto
             </Typography>
             <Stack spacing={1.5}>
               {contactLinks.map((item) => (
-                <Stack key={item.label} direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
+                <Stack
+                  key={item.label}
+                  direction="row"
+                  spacing={1.25}
+                  sx={{ alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' } }}
+                >
                   <Box sx={{ display: 'flex', color: 'primary.main' }}>{item.icon}</Box>
                   {item.href ? (
                     <Typography
@@ -117,7 +122,7 @@ export default function Footer() {
             </Stack>
           </Box>
 
-          <Box>
+          <Box sx={{ flex: { md: '1 1 0' }, textAlign: { xs: 'center', md: 'left' } }}>
             <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 2 }}>
               Enlaces
             </Typography>
