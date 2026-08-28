@@ -12,8 +12,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import AnimatedBackground from '@/components/ui/AnimatedBackground'
 
 const techStack = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL',
-  'Prisma', 'MUI', 'React Native', 'n8n', 'Docker',
+  'Next.js', 'React', 'TypeScript', 'Node.js', 'Laravel',
+  'PHP', 'PostgreSQL', 'Prisma', 'Tailwind CSS', 'MUI',
+  'React Native', 'Strapi', 'n8n', 'AWS', 'Docker',
   'Git', 'Vercel',
 ]
 

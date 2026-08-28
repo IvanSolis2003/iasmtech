@@ -9,16 +9,20 @@ const techs = [
   { icon: 'nextjs/nextjs-original', name: 'Next.js', invert: true },
   { icon: 'react/react-original', name: 'React', invert: false },
   { icon: 'typescript/typescript-original', name: 'TypeScript', invert: false },
+  { icon: 'javascript/javascript-original', name: 'JavaScript', invert: false },
   { icon: 'nodejs/nodejs-original', name: 'Node.js', invert: false },
+  { icon: 'laravel/laravel-original', name: 'Laravel', invert: false },
+  { icon: 'php/php-original', name: 'PHP', invert: false },
   { icon: 'postgresql/postgresql-original', name: 'PostgreSQL', invert: false },
   { icon: 'prisma/prisma-original', name: 'Prisma', invert: true },
+  { icon: 'tailwindcss/tailwindcss-original', name: 'Tailwind CSS', invert: false },
   { icon: 'materialui/materialui-original', name: 'MUI', invert: false },
   { icon: 'react/react-original', name: 'React Native', invert: false },
   { icon: 'express/express-original', name: 'Express', invert: true },
+  { icon: 'amazonwebservices/amazonwebservices-original-wordmark', name: 'AWS', invert: true },
   { icon: 'docker/docker-original', name: 'Docker', invert: false },
   { icon: 'git/git-original', name: 'Git', invert: false },
   { icon: 'vercel/vercel-original', name: 'Vercel', invert: true },
-  { icon: 'javascript/javascript-original', name: 'JavaScript', invert: false },
 ]
 
 export default function TechMarquee() {
