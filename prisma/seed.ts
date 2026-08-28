@@ -40,12 +40,15 @@ async function main() {
       {
         title: 'Sistema de Gestión de Activos',
         description: 'Sistema para gestión de activos tecnológicos y préstamos internos en empresas. Control de inventario, asignaciones y mantenimientos.',
-        longDesc: 'Desarrollado con Laravel y MySQL. Incluye módulos de registro de activos, asignación a usuarios, control de préstamos, historial de mantenimiento y reportes exportables.',
-        techStack: ['Laravel', 'MySQL', 'PHP', 'Bootstrap', 'jQuery'],
+        longDesc: 'Desarrollado con Laravel 12 y PostgreSQL serverless, desplegado sobre AWS Lambda con API Gateway mediante Bref. Incluye máquina de estados por activo, códigos QR para registrar movimientos desde el celular, validación por RUT, notificaciones por correo y auditoría por rol.',
+        techStack: ['Laravel 12', 'PHP', 'PostgreSQL', 'AWS Lambda', 'Tailwind CSS'],
         category: 'SISTEMA',
         featured: true,
         order: 2,
-        projectUrl: 'https://sistema-de-prestamos-w51n.onrender.com/',
+        projectUrl: 'https://sistemaprestamos.iasmtech.com',
+        testUser: 'admin@sistemaprestamos.cl',
+        testPassword: 'Admin123*',
+        testRole: 'Administrador',
       },
       {
         title: 'FamilyTasks',

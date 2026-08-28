@@ -13,6 +13,9 @@ interface ProjectBody {
   githubUrl?: string
   category: Category
   featured: boolean
+  testUser?: string
+  testPassword?: string
+  testRole?: string
   order: number
 }
 

@@ -43,6 +43,9 @@ export default function ProjectForm({ project }: ProjectFormProps) {
     githubUrl: project?.githubUrl ?? '',
     category: project?.category ?? 'WEB' as Category,
     featured: project?.featured ?? false,
+    testUser: project?.testUser ?? '',
+    testPassword: project?.testPassword ?? '',
+    testRole: project?.testRole ?? '',
     order: project?.order ?? 0,
   })
 
@@ -94,7 +97,21 @@ export default function ProjectForm({ project }: ProjectFormProps) {
             value={form.longDesc} onChange={(e) => setForm({ ...form, longDesc: e.target.value })} sx={{ mb: 3 }} />
           <TextField fullWidth label="Stack tecnológico (separado por comas)"
             helperText="Ej: Next.js, TypeScript, PostgreSQL"
-            required value={form.techStack} onChange={(e) => setForm({ ...form, techStack: e.target.value })} />
+            required value={form.techStack} onChange={(e) => setForm({ ...form, techStack: e.target.value })} sx={{ mb: 3 }} />
+
+          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 2 }}>
+            Credenciales de prueba (opcional)
+          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2 }}>
+            <TextField fullWidth label="Usuario" value={form.testUser}
+              helperText="Se muestran en la tarjeta del proyecto"
+              onChange={(e) => setForm({ ...form, testUser: e.target.value })} />
+            <TextField fullWidth label="Contraseña" value={form.testPassword}
+              onChange={(e) => setForm({ ...form, testPassword: e.target.value })} />
+            <TextField fullWidth label="Rol" value={form.testRole}
+              helperText="Ej: Administrador"
+              onChange={(e) => setForm({ ...form, testRole: e.target.value })} />
+          </Box>
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
