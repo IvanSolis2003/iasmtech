@@ -79,6 +79,9 @@ async function main() {
         featured: true,
         order: 6,
         projectUrl: 'https://vidrieria-demo-xi.vercel.app/',
+        testUser: 'admin@vidrieriademo.cl',
+        testPassword: 'demo1234',
+        testRole: 'Administrador',
       },
       {
         title: 'Davielle Orfebres — E-commerce de Joyería',
