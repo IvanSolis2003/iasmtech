@@ -178,6 +178,49 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
                       />
                     ))}
                   </Box>
+
+                  {(project.testUser || project.testPassword) && (
+                    <Box
+                      sx={{
+                        mt: 2,
+                        p: 1.5,
+                        borderRadius: 1,
+                        border: '1px solid rgba(105, 240, 174, 0.25)',
+                        backgroundColor: 'rgba(105, 240, 174, 0.05)',
+                      }}
+                    >
+                      <Typography
+                        variant="caption"
+                        sx={{ display: 'block', fontWeight: 700, color: '#69F0AE', mb: 0.75, letterSpacing: 0.5 }}
+                      >
+                        🔑 CREDENCIALES DE PRUEBA
+                      </Typography>
+                      {project.testUser && (
+                        <Typography variant="caption" sx={{ display: 'block', color: 'text.secondary' }}>
+                          Usuario:{' '}
+                          <Box component="code" sx={{ color: '#69F0AE', fontFamily: 'monospace' }}>
+                            {project.testUser}
+                          </Box>
+                        </Typography>
+                      )}
+                      {project.testPassword && (
+                        <Typography variant="caption" sx={{ display: 'block', color: 'text.secondary' }}>
+                          Clave:{' '}
+                          <Box component="code" sx={{ color: '#69F0AE', fontFamily: 'monospace' }}>
+                            {project.testPassword}
+                          </Box>
+                        </Typography>
+                      )}
+                      {project.testRole && (
+                        <Typography variant="caption" sx={{ display: 'block', color: 'text.secondary' }}>
+                          Rol:{' '}
+                          <Box component="span" sx={{ color: '#69F0AE', fontWeight: 600 }}>
+                            {project.testRole}
+                          </Box>
+                        </Typography>
+                      )}
+                    </Box>
+                  )}
                 </CardContent>
                 <CardActions sx={{ px: 3, pb: 3, gap: 1 }}>
                   {project.projectUrl && (

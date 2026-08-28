@@ -154,6 +154,22 @@ export default function Footer() {
         <Typography variant="body2" color="text.secondary" align="center">
           © {new Date().getFullYear()} Iván Solís — Talca, Chile. Todos los derechos reservados.
         </Typography>
+
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          align="center"
+          sx={{ mt: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5 }}
+        >
+          Desarrollado con
+          <Box component="span" role="img" aria-label="amor" sx={{ color: '#e25555' }}>
+            ❤️
+          </Box>
+          por
+          <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>
+            iasm<Box component="span" sx={{ color: 'primary.main' }}>tech.com</Box>
+          </Box>
+        </Typography>
       </Container>
     </Box>
   )

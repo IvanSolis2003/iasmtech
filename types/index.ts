@@ -21,6 +21,9 @@ export interface Project {
   githubUrl?: string | null
   category: Category
   featured: boolean
+  testUser?: string | null
+  testPassword?: string | null
+  testRole?: string | null
   order: number
   createdAt: Date
   updatedAt: Date
