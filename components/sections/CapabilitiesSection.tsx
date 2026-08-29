@@ -26,7 +26,7 @@ const capabilities: Capability[] = [
       'Nada de plantillas genéricas. Construyo sitios, tiendas y sistemas pensados exactamente para tu operación, con código limpio, rápido y listo para crecer contigo.',
     bullets: [
       'Sitios web y e-commerce con Next.js',
-      'Sistemas de gestión a medida',
+      'Sistemas de gestión e infraestructura en AWS',
       'Apps móviles Android con React Native',
     ],
     image: '/assets/cap-desarrollo.jpg',
@@ -54,7 +54,7 @@ const capabilities: Capability[] = [
       'El proyecto no termina cuando sale a producción. Me quedo contigo: monitoreo, respaldos, actualizaciones y soporte directo para que nunca te quedes solo.',
     bullets: [
       'Monitoreo y respaldos automáticos',
-      'Actualizaciones y mejoras continuas',
+      'Despliegues en la nube con AWS y Vercel',
       'Soporte directo por WhatsApp',
     ],
     image: '/assets/cap-soporte.jpg',

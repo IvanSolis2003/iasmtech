@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'programador freelance Chile',
     'Next.js',
     'React',
+    'AWS',
     'PYMES',
     'automatización n8n',
   ],

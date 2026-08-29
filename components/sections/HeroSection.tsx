@@ -307,6 +307,7 @@ export default function HeroSection() {
               { icon: 'typescript/typescript-original', name: 'TypeScript', invert: false },
               { icon: 'nodejs/nodejs-original', name: 'Node.js', invert: false },
               { icon: 'postgresql/postgresql-original', name: 'PostgreSQL', invert: false },
+              { icon: 'amazonwebservices/amazonwebservices-original-wordmark', name: 'AWS', invert: true },
               { icon: 'react/react-original', name: 'React Native', invert: false },
             ].map((tech) => (
               <Box

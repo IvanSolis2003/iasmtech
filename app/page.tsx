@@ -23,7 +23,7 @@ const jsonLdPerson = {
   },
   knowsAbout: [
     'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL',
-    'React Native', 'n8n', 'Desarrollo Web', 'Apps Móviles',
+    'AWS', 'React Native', 'n8n', 'Desarrollo Web', 'Apps Móviles',
   ],
 }
 
