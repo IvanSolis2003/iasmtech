@@ -93,16 +93,33 @@ export default function BlogSection({ posts }: BlogSectionProps) {
                     },
                   }}
                 >
-                  <Box
-                    sx={{
-                      height: 160,
-                      background: 'linear-gradient(135deg, rgba(41,121,255,0.1) 0%, rgba(0,229,255,0.05) 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <ArticleIcon sx={{ fontSize: 48, color: 'rgba(41,121,255,0.4)' }} />
+                  <Box sx={{ position: 'relative', overflow: 'hidden', height: 180 }}>
+                    {post.imageUrl ? (
+                      <Box
+                        component="img"
+                        src={post.imageUrl}
+                        alt={post.title}
+                        sx={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                          transition: 'transform 0.4s ease',
+                        }}
+                      />
+                    ) : (
+                      <Box
+                        sx={{
+                          height: '100%',
+                          background: 'linear-gradient(135deg, rgba(41,121,255,0.1) 0%, rgba(0,229,255,0.05) 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <ArticleIcon sx={{ fontSize: 48, color: 'rgba(41,121,255,0.4)' }} />
+                      </Box>
+                    )}
                   </Box>
                   <CardContent sx={{ flex: 1, p: 3 }}>
                     <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>

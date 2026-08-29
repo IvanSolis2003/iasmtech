@@ -85,6 +85,23 @@ export default async function BlogPostPage({ params }: Props) {
             {post.excerpt}
           </Typography>
 
+          {post.imageUrl && (
+            <Box
+              component="img"
+              src={post.imageUrl}
+              alt={post.title}
+              sx={{
+                width: '100%',
+                maxHeight: 440,
+                objectFit: 'cover',
+                borderRadius: '24px',
+                mb: 5,
+                border: '1px solid rgba(41,121,255,0.2)',
+                display: 'block',
+              }}
+            />
+          )}
+
           <Divider sx={{ borderColor: 'rgba(41,121,255,0.15)', mb: 5 }} />
 
           <Box
