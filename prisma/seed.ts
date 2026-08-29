@@ -51,6 +51,18 @@ async function main() {
         testRole: 'Administrador',
       },
       {
+        title: 'RutinIA — App de Entrenamiento Inteligente',
+        description: 'App mobile-first que genera rutinas de entrenamiento personalizadas según tu objetivo y equipamiento, con asistente conversacional IA y seguimiento por fotos.',
+        longDesc: 'Desarrollada con Next.js 16 (App Router con Turbopack) y TypeScript, con PostgreSQL serverless en Neon vía Prisma 7. Incluye motor de sobrecarga progresiva sin librerías externas, asistente inteligente con Gemini API y grounding, análisis de postura con MediaPipe Pose en cliente sin costo de servidor, subida de fotos firmada a Cloudinary, recordatorios con Resend y soporte PWA para instalación en el celular y uso offline.',
+        techStack: ['Next.js 16', 'Gemini API', 'MediaPipe Pose', 'PostgreSQL', 'Prisma', 'TypeScript', 'Material UI', 'Cloudinary', 'Resend', 'PWA'],
+        category: 'APP_MOVIL',
+        featured: true,
+        order: 3,
+        imageUrl: '/assets/rutinia.png',
+        projectUrl: 'https://rutinia-ten.vercel.app',
+        githubUrl: 'https://github.com/IvanSolis2003/RutinIA',
+      },
+      {
         title: 'FamilyTasks',
         description: 'Aplicación web para gestión colaborativa de tareas familiares. Asignación de responsables, fechas límite y seguimiento de progreso.',
         longDesc: 'Desarrollada con Next.js 14 y TypeScript, con Drizzle ORM sobre PostgreSQL serverless en Neon. Incluye autenticación familiar con Auth.js, asignación de tareas por miembro, recordatorios por correo con Resend e imágenes en Cloudinary.',

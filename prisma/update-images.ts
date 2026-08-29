@@ -12,6 +12,7 @@ const images: Record<string, string> = {
   'Vidriería Demo — Cotizador y Panel Autogestionable': '/assets/vidrieria.png',
   'Davielle Orfebres — E-commerce de Joyería': '/assets/davielle.png',
   'Bóveda Personal — Gestor Seguro de Credenciales': '/assets/boveda.png',
+  'RutinIA — App de Entrenamiento Inteligente': '/assets/rutinia.png',
 }
 
 async function main() {
