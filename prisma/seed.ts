@@ -61,6 +61,9 @@ async function main() {
         imageUrl: '/assets/rutinia.png',
         projectUrl: 'https://rutinia-ten.vercel.app',
         githubUrl: 'https://github.com/IvanSolis2003/RutinIA',
+        testUser: 'demo@iasmtech.com',
+        testPassword: 'RutinIA-Demo-2026',
+        testRole: 'Usuario Demo',
       },
       {
         title: 'FamilyTasks',
