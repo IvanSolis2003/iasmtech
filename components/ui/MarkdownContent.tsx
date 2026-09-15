@@ -12,12 +12,15 @@ type Block =
   | { type: 'p'; text: string }
   | { type: 'code'; text: string }
   | { type: 'blockquote'; text: string }
+  | { type: 'table'; header: string[]; rows: string[][] }
 
 const HEADING_RE = /^(#{1,3})\s+(.*)$/
 const HR_RE = /^(-{3,}|\*{3,})\s*$/
 const QUOTE_RE = /^>\s?(.*)$/
 const UL_RE = /^[-*]\s+(.*)$/
 const OL_RE = /^\d+\.\s+(.*)$/
+const TABLE_ROW_RE = /^\s*\|(.*)\|\s*$/
+const TABLE_SEPARATOR_RE = /^\s*\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$/
 
 function isSpecialLine(line: string): boolean {
   return (
@@ -26,9 +29,19 @@ function isSpecialLine(line: string): boolean {
     QUOTE_RE.test(line) ||
     UL_RE.test(line) ||
     OL_RE.test(line) ||
+    TABLE_ROW_RE.test(line) ||
     line.startsWith('```') ||
     line.trim() === ''
   )
+}
+
+function parseTableRow(line: string): string[] {
+  return line
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map((cell) => cell.trim())
 }
 
 function parseBlocks(content: string): Block[] {
@@ -97,6 +110,20 @@ function parseBlocks(content: string): Block[] {
         i++
       }
       blocks.push({ type: 'ol', items })
+      continue
+    }
+
+    if (TABLE_ROW_RE.test(line)) {
+      const tableLines: string[] = []
+      while (i < lines.length && TABLE_ROW_RE.test(lines[i])) {
+        tableLines.push(lines[i])
+        i++
+      }
+
+      const header = parseTableRow(tableLines[0])
+      const bodyStart = tableLines[1] && TABLE_SEPARATOR_RE.test(tableLines[1]) ? 2 : 1
+      const rows = tableLines.slice(bodyStart).map(parseTableRow)
+      blocks.push({ type: 'table', header, rows })
       continue
     }
 
@@ -188,6 +215,24 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           mb: 3,
           '& p': { color: 'text.secondary', fontStyle: 'italic' },
         },
+        '& table': {
+          width: '100%',
+          borderCollapse: 'collapse',
+          mb: 3,
+          display: 'block',
+          overflowX: 'auto',
+        },
+        '& th, & td': {
+          border: '1px solid rgba(41,121,255,0.2)',
+          p: 1.5,
+          textAlign: 'left',
+          color: 'text.secondary',
+        },
+        '& th': {
+          color: 'text.primary',
+          fontWeight: 700,
+          backgroundColor: 'background.paper',
+        },
       }}
     >
       {blocks.map((block, i) => {
@@ -229,6 +274,27 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
               <blockquote key={key}>
                 <p>{renderInline(block.text, key)}</p>
               </blockquote>
+            )
+          case 'table':
+            return (
+              <table key={key}>
+                <thead>
+                  <tr>
+                    {block.header.map((cell, j) => (
+                      <th key={`${key}-h-${j}`}>{renderInline(cell, `${key}-h-${j}`)}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.rows.map((row, r) => (
+                    <tr key={`${key}-r-${r}`}>
+                      {row.map((cell, c) => (
+                        <td key={`${key}-r-${r}-c-${c}`}>{renderInline(cell, `${key}-r-${r}-c-${c}`)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             )
           case 'p':
           default:
