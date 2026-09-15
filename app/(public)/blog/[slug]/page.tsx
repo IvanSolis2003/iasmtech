@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import MarkdownContent from '@/components/ui/MarkdownContent'
 import { prisma } from '@/lib/prisma'
 
 interface Props {
@@ -104,45 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <Divider sx={{ borderColor: 'rgba(41,121,255,0.15)', mb: 5 }} />
 
-          <Box
-            sx={{
-              '& p': { mb: 3, lineHeight: 1.9, color: 'text.secondary' },
-              '& h2': { mt: 5, mb: 2, fontWeight: 700, fontSize: '1.5rem' },
-              '& h3': { mt: 4, mb: 2, fontWeight: 600 },
-              '& ul, & ol': { pl: 3, mb: 3, '& li': { mb: 1, color: 'text.secondary', lineHeight: 1.8 } },
-              '& pre': {
-                backgroundColor: 'background.paper',
-                border: '1px solid rgba(41,121,255,0.2)',
-                borderRadius: 2,
-                p: 3,
-                mb: 3,
-                overflow: 'auto',
-                fontSize: '0.875rem',
-              },
-              '& code': {
-                backgroundColor: 'rgba(41,121,255,0.1)',
-                px: 0.75,
-                py: 0.25,
-                borderRadius: 1,
-                fontSize: '0.875rem',
-                color: 'primary.light',
-              },
-              '& blockquote': {
-                borderLeft: '3px solid',
-                borderColor: 'primary.main',
-                pl: 3,
-                ml: 0,
-                mb: 3,
-                '& p': { color: 'text.secondary', fontStyle: 'italic' },
-              },
-            }}
-          >
-            {post.content.split('\n').map((line, i) => (
-              <Typography key={i} variant="body1" sx={{ mb: line === '' ? 2 : 0 }}>
-                {line}
-              </Typography>
-            ))}
-          </Box>
+          <MarkdownContent content={post.content} />
 
           <Divider sx={{ borderColor: 'rgba(41,121,255,0.15)', mt: 6, mb: 4 }} />
 
